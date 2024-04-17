@@ -19,9 +19,11 @@ Former mechanical engineer (high-enthalpy aka 'hypersonic' flows).
 - [VKontakte](https://vk.com/id5294240)
 
 # Talks
+
 ## 2024
 - pg_index_stats - an extension for managing extended statistics automatically. FOSSASIA'2024 (PGDay section). April 8-10 2024, Hanoi, Vietnam.
-[[schedule](https://eventyay.com/e/55d2a466/session/9083)[presentation](https://github.com/danolivo/conf/blob/main/2024-FossAsia/pg_index_stats.pdf)]
+[[schedule](https://eventyay.com/e/55d2a466/session/9083)][[presentation](https://github.com/danolivo/conf/blob/main/2024-FossAsia/pg_index_stats.pdf)]
+
 ## 2023
 - Query plan freezing extension: design, issues and lessons learned. Israeli PostgreSQL Jam'2023.
 [[schedule](https://pgday.org.il)][[presentation](https://github.com/danolivo/conf/blob/main/2023-PGDay-Israel/sr-plan.pdf)]
