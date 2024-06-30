@@ -7,16 +7,16 @@
 <meta name="generator" content="Jekyll v3.9.5" />
 <meta property="og:title" content="Lepikhov Andrei" />
 <meta property="og:locale" content="en_US" />
-<link rel="canonical" href="https://danolivo.github.io/" />
-<meta property="og:url" content="https://danolivo.github.io/" />
+<link rel="canonical" href="http://localhost:4000/" />
+<meta property="og:url" content="http://localhost:4000/" />
 <meta property="og:site_name" content="Lepikhov Andrei" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Lepikhov Andrei" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","headline":"Lepikhov Andrei","name":"Lepikhov Andrei","url":"https://danolivo.github.io/"}</script>
+{"@context":"https://schema.org","@type":"WebSite","headline":"Lepikhov Andrei","name":"Lepikhov Andrei","url":"http://localhost:4000/"}</script>
 <!-- End Jekyll SEO tag -->
-<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://danolivo.github.io/feed.xml" title="Lepikhov Andrei" /></head>
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Lepikhov Andrei" /></head>
 <body><header class="site-header" role="banner">
 
   <div class="wrapper"><a class="site-title" rel="author" href="/">Lepikhov Andrei</a><nav class="site-nav">
@@ -37,16 +37,16 @@
         <div class="home"><p>Ph.D, senior software developer, open-source enthusiast<br />
 Former mechanical engineer (high-enthalpy aka ‘hypersonic’ flows).</p>
 
-<p><em>e-mail</em>: a.lepikhov(at)postgrespro(dot)ru<br />
+<p><em>e-mail</em>: lepihov(at)gmail(dot)com<br />
 <em>telegram</em>: <a href="t.me/danolivo">@danolivo</a></p>
 
 <h1 id="links">Links</h1>
 <ul>
+  <li><a href="https://www.facebook.com/avlepikhov/">Facebook</a></li>
   <li><a href="https://github.com/danolivo">Github</a></li>
   <li><a href="https://www.linkedin.com/in/avlepikhov/">Linkedin</a></li>
-  <li><a href="https://twitter.com/avlepikhov">Twitter</a></li>
-  <li><a href="https://www.facebook.com/avlepikhov/">Facebook</a></li>
   <li><a href="https://medium.com/@andreylepikhov">Medium</a></li>
+  <li><a href="https://twitter.com/avlepikhov">Twitter</a></li>
   <li><a href="https://vk.com/id5294240">VKontakte</a></li>
 </ul>
 
@@ -60,11 +60,20 @@ Former mechanical engineer (high-enthalpy aka ‘hypersonic’ flows).</p>
 
 <h2 id="2023">2023</h2>
 <ul>
-  <li>Query plan freezing extension: design, issues and lessons learned. Israeli PostgreSQL Jam’2023.
-[<a href="https://pgday.org.il">schedule</a>][<a href="https://github.com/danolivo/conf/blob/main/2023-PGDay-Israel/sr-plan.pdf">presentation</a>]</li>
-  <li>Real-time Query Replanning of Hopeless Queries. PGConf.SPB’2023.
-[<a href="https://pgconf.ru/en/talk/1589471">schedule</a>] [<a href="https://github.com/danolivo/conf/blob/main/2023-PGConf-spb/PGConf-Spb-2023.pdf">presentation</a>]</li>
+  <li>
+    <p>Query plan freezing extension: design, issues and lessons learned. Israeli PostgreSQL Jam’2023.
+[<a href="https://pgday.org.il">schedule</a>][<a href="https://github.com/danolivo/conf/blob/main/2023-PGDay-Israel/sr-plan.pdf">presentation</a>]</p>
+  </li>
+  <li>
+    <p>Real-time Query Replanning of Hopeless Queries. PGConf.SPB’2023.
+[<a href="https://pgconf.ru/en/talk/1589471">schedule</a>] [<a href="https://github.com/danolivo/conf/blob/main/2023-PGConf-spb/PGConf-Spb-2023.pdf">presentation</a>]</p>
+  </li>
 </ul>
+
+<h1 id="projects">Projects</h1>
+<h2 id="multimaster">Multimaster</h2>
+<p>This project is dedicated to inventing built-in HA based on PostgreSQL. It may be installed on different servers, leveraging global transaction ID and logical replication. From the application standpoint, all servers contain equivalent data up to MVCC with automatic conflict resolution. Some trade-offs exist: transactions by default have a REPEATABLE READ isolation level, and DML performance reduces with the increase in the number of instances. Distance between servers depends only on network speed and internal heartbeat timeout.
+The project has an open-source <a href="https://github.com/postgrespro/mmts">GitHub</a> version and integrated into the <a href="https://postgrespro.com/docs/enterprise/16/multimaster">Postgres Professional Enterprise</a> database system.</p>
 </div>
 
       </div>
