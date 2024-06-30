@@ -3,18 +3,18 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Laboratory of Optimisation | Lepikhov Andrei</title>
+<title>Optimisation Lab | Lepikhov Andrei</title>
 <meta name="generator" content="Jekyll v3.9.5" />
-<meta property="og:title" content="Laboratory of Optimisation" />
+<meta property="og:title" content="Optimisation Lab" />
 <meta property="og:locale" content="en_US" />
 <link rel="canonical" href="http://localhost:4000/OptLab" />
 <meta property="og:url" content="http://localhost:4000/OptLab" />
 <meta property="og:site_name" content="Lepikhov Andrei" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Laboratory of Optimisation" />
+<meta property="twitter:title" content="Optimisation Lab" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","headline":"Laboratory of Optimisation","url":"http://localhost:4000/OptLab"}</script>
+{"@context":"https://schema.org","@type":"WebPage","headline":"Optimisation Lab","url":"http://localhost:4000/OptLab"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Lepikhov Andrei" /></head>
 <body><header class="site-header" role="banner">
@@ -29,7 +29,7 @@
           </span>
         </label>
 
-        <div class="trigger"><a class="page-link" href="/OptLab">Laboratory of Optimisation</a></div>
+        <div class="trigger"><a class="page-link" href="/OptLab">Optimisation Lab</a></div>
       </nav></div>
 </header>
 <main class="page-content" aria-label="Content">
@@ -37,11 +37,31 @@
         <article class="post">
 
   <header class="post-header">
-    <h1 class="post-title">Laboratory of Optimisation</h1>
+    <h1 class="post-title">Optimisation Lab</h1>
   </header>
 
   <div class="post-content">
-    <p>On this page you can find list of our crazy projects.</p>
+    <p>On this page you can find list of our crazy projects:</p>
+
+<h1 id="group-by-optimisation-part-2">GROUP-BY Optimisation, part 2</h1>
+<p>Optimiser has freedom to choose order of grouping columns. Here we try to add one more strategy - put in the first position the column with greatest number of distict values.</p>
+
+<p>https://github.com/postgrespro/postgres/tree/sort-columnsnum</p>
+
+<h1 id="assymetric-join">Assymetric JOIN</h1>
+<p>Thhis feature mostly oroiented to distributed execution. Works likewise partitionwise join feature. Allows to JOIN plain table and partitioned one.</p>
+
+<p>https://github.com/postgrespro/postgres/tree/asymmetric-join</p>
+
+<h1 id="self-join-elimination">Self-Join Elimination</h1>
+<p>Remove unnecessary join from the query tree if is proved that single scan return the same data.</p>
+
+<p>https://github.com/postgrespro/postgres/tree/self-join-elimination</p>
+
+<h1 id="auto-generation-of-extended-statistics">Auto-generation of extended statistics</h1>
+<p>It is impractical to compute multivariate statistics automatically. Our conjecture here is that index structure reflects that a specific set of columns and extensions is most frequently used for extracting data, and it is critical to build optimal query plans when combinations of these columns are involved.</p>
+
+<p>https://github.com/danolivo/pg_index_stats</p>
 
   </div>
 
