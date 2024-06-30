@@ -71,9 +71,22 @@ Former mechanical engineer (high-enthalpy aka ‘hypersonic’ flows).</p>
 </ul>
 
 <h1 id="projects">Projects</h1>
+<h2 id="adaptive-query-optimiser-aqo">Adaptive Query Optimiser (AQO)</h2>
+<p>Here, we employ the fact that database systems usually process queries of quite similar structure.
+The main idea is to save information about the actual number of rows produced by query plan nodes and reuse it during the next execution.
+Two significant hurdles were managed here. First, some node signatures were invented to match cardinality and specific nodes during planning. Second, how to generalise the AQO knowledge base.</p>
+
+<p>The project can be found in an open-source <a href="https://github.com/postgrespro/aqo">repository</a>.</p>
+
+<h2 id="shardman">Shardman</h2>
+<p>It is an attempt to invent a distributed database system natively based on PostgreSQL. The fundamental conjecture here is that the standard foreign data wrapper technique and its implementation in the postgres_fdw extension can be enough to partition data across multiple servers. The primary efforts are concentrated on creating distributed timestamp-based transactions (<a href="https://www.postgresql.org/message-id/flat/07b2c899-4ed0-4c87-1327-23c750311248%40postgrespro.ru">CSN</a>), the optimiser’s extensibility, and adding some” must-have” features for distributed execution, like global tables, asymmetric join, shuffle join, etc.</p>
+
+<p>The project doesn’t exist in the open-source version (see <a href="https://postgrespro.com/products/archive">here</a> to try the early version). Some underlying technologies can be found in the pgsql-hackers mailing list.</p>
+
 <h2 id="multimaster">Multimaster</h2>
-<p>This project is dedicated to inventing built-in HA based on PostgreSQL. It may be installed on different servers, leveraging global transaction ID and logical replication. From the application standpoint, all servers contain equivalent data up to MVCC with automatic conflict resolution. Some trade-offs exist: transactions by default have a REPEATABLE READ isolation level, and DML performance reduces with the increase in the number of instances. Distance between servers depends only on network speed and internal heartbeat timeout.
-The project has an open-source <a href="https://github.com/postgrespro/mmts">GitHub</a> version and integrated into the <a href="https://postgrespro.com/docs/enterprise/16/multimaster">Postgres Professional Enterprise</a> database system.</p>
+<p>This project is dedicated to inventing built-in HA based on PostgreSQL. It may be installed on different servers, leveraging global transaction ID and logical replication. From the application standpoint, all servers contain equivalent data up to MVCC with automatic conflict resolution. Some trade-offs exist: transactions by default have a REPEATABLE READ isolation level, and DML performance reduces with the increase in the number of instances. Distance between servers depends only on network speed and internal heartbeat timeout.</p>
+
+<p>The project has an open-source <a href="https://github.com/postgrespro/mmts">GitHub</a> version and integrated into the <a href="https://postgrespro.com/docs/enterprise/16/multimaster">Postgres Professional Enterprise</a> database system.</p>
 </div>
 
       </div>
