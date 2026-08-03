@@ -1,6 +1,10 @@
 # Conference and meetup talks. Titles and co-authors taken from the title slide
 # of each deck in the `conf` repository, not from memory.
 #
+# KEEP THIS FILE NEWEST-FIRST. The home page takes the first three entries in
+# data order rather than sorting: Liquid's `sort` is not stable, so entries
+# sharing a year came out in a different order on different machines.
+#
 #   year, title, event, place, coauthors, lang, url (schedule), slides, video
 #   slides/video paths are relative to site.materials unless absolute.
 

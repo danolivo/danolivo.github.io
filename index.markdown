@@ -39,11 +39,6 @@ that have not landed anywhere yet.</p>
 
 ## Recent talks
 
-{%- comment -%}
-  No `sort: "year"` here: Liquid's sort is not stable, so entries sharing a year
-  came out in a different order on different machines. _data/talks.yml is kept
-  newest-first, so plain data order is both correct and reproducible.
-{%- endcomment -%}
 <ul class="biblio">
 {%- for t in site.data.talks limit: 3 %}
   <li>
