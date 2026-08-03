@@ -1,0 +1,25 @@
+{%- comment -%}
+Renders a reference list grouped by year, newest first.
+Parameters:
+  items — array of entries from _data/publications.yml
+{%- endcomment -%}
+{%- assign groups = include.items | group_by: "year" | sort: "name" | reverse -%}
+{%- for group in groups %}
+<h3>{{ group.name }}</h3>
+<ul class="biblio">
+  {%- for p in group.items %}
+  <li>
+    <span class="authors">{{ p.authors }}.</span>
+    <span class="btitle">{{ p.title }}.</span>
+    <span class="venue">{{ p.venue }}{% if p.lang == "ru" %} (in Russian){% endif %}.</span>
+    {%- capture refs -%}
+      {%- if p.pdf %}<a href="{{ site.materials }}{{ p.pdf }}">pdf</a>{% endif -%}
+      {%- if p.slides %}<a href="{{ site.materials }}{{ p.slides }}">slides</a>{% endif -%}
+      {%- if p.doi %}<a href="https://doi.org/{{ p.doi }}">doi</a>{% endif -%}
+      {%- if p.url %}<a href="{{ p.url }}">link</a>{% endif -%}
+    {%- endcapture -%}
+    {%- if refs != "" %}<span class="refs">{{ refs }}</span>{% endif %}
+  </li>
+  {%- endfor %}
+</ul>
+{%- endfor %}

@@ -1,0 +1,392 @@
+# Bibliography. One entry per publication.
+#
+#   year     integer, used for grouping and sorting
+#   authors  as published, transliterated
+#   title    as published; Cyrillic kept for Russian-language works
+#   venue    journal / proceedings, volume, pages
+#   type     journal | conference | thesis
+#   area     db  — parallel and distributed database systems
+#            cfd — computational aerothermodynamics
+#   lang     ru  — marks the work as published in Russian
+#   doi      bare DOI, rendered as a link
+#   url      publisher or proceedings page
+#   pdf      path inside the `conf` repository, relative to site.materials
+#   slides   ditto
+#
+# Entries without a `pdf:` are ones for which no copy was found in `conf`.
+
+# ---------------------------------------------------------------- 2017
+
+- year: 2017
+  authors: D.R. Ismagilov, G.F. Kostin, A.V. Lepikhov
+  title: Extension of ANSYS Fluent Built-in Computational Models for Modelling of High-Enthalpy Hypersonic Flows
+  venue: >-
+    Proceedings of the XX Anniversary International Conference on Computational
+    Mechanics and Modern Applied Software Systems (CMMASS'2017), 24–31 May 2017
+  type: conference
+  area: cfd
+  pdf: /2017-CMMASS/Lepikhov2017a-VMSPPS.pdf
+  slides: /2017-CMMASS/Lepikhov2017a-presentation.pdf
+
+- year: 2017
+  authors: A.V. Lepikhov
+  title: Effect of the enthalpy of hypersonic flow on separation and heat transfer near a three-dimensional compression corner
+  venue: >-
+    XXXII International Conference on Equations of State for Matter,
+    1–6 March 2017, Elbrus, Russia
+  type: conference
+  area: cfd
+  pdf: /2017-Elbrus/Lepikhov2017-paper.pdf
+
+- year: 2017
+  authors: A.V. Lepikhov
+  title: Упрощенная кинетическая схема горения керосин-кислородной смеси в камере ЖРД
+  venue: XLI Академические чтения по космонавтике, 24–27 января 2017, Москва
+  type: conference
+  area: cfd
+  lang: ru
+  pdf: /2017-Korolev/conf-paper.pdf
+  slides: /2017-Korolev/Poster.pdf
+
+- year: 2017
+  authors: A.V. Lepikhov, E.S. Merkulov
+  title: Численное моделирование ударно-волновых нагрузок на ракету космического назначения при запуске двигателя первой ступени
+  venue: XLI Академические чтения по космонавтике, 24–27 января 2017, Москва
+  type: conference
+  area: cfd
+  lang: ru
+  pdf: /2017-KorolevM/2016-11-10-тезисы%20КЧ2017%20Меркулов-Лепихов.pdf
+  url: http://korolevspace.ru/sites/default/files/uploads/Abstracts_all_2017.pdf
+
+# ---------------------------------------------------------------- 2016
+
+- year: 2016
+  authors: A.V. Lepikhov
+  title: Упрощенная кинетическая схема горения смеси RP-1/O2 для CFD-расчетов ракетных двигателей
+  venue: Физико-химическая кинетика в газовой динамике, 2016, Т. 17, вып. 1
+  type: journal
+  area: cfd
+  lang: ru
+
+- year: 2016
+  authors: E.S. Merkulov, A.V. Lepikhov
+  title: Influence of a dispersed phase presented in external flow on heat exchange and erosion damage of surface of a hypersonic flight vehicle
+  venue: >-
+    XXXI International Conference on Equations of State for Matter,
+    1–6 March 2016, Elbrus, Russia
+  type: conference
+  area: cfd
+  pdf: /2016-Elbrus/LepikhovM2016.pdf
+
+- year: 2016
+  authors: A.Yu. Golikov, A.V. Lepikhov, E.S. Merkulov
+  title: Численное моделирование взаимодействия струй блочного жидкостного ракетного двигателя, истекающих с большими степенями нерасчетности
+  venue: XXII научно-техническая конференция «Макеевские чтения», 25–26 октября 2016
+  type: conference
+  area: cfd
+  lang: ru
+
+# ---------------------------------------------------------------- 2015
+
+- year: 2015
+  authors: V.I. Khlybov, V.G. Degtiar, Yu.V. Grakhov, A.V. Lepikhov, S.T. Kalashnikov
+  title: Numerical simulation of aerogasdynamics of a flight vehicle with a hypersonic liquid-fuel ramjet
+  venue: >-
+    XXX International Conference on Equations of State for Matter: Book of Abstracts,
+    1–6 March 2015, Elbrus, Kabardino-Balkaria, Russia
+  type: conference
+  area: cfd
+  pdf: /2015-Elbrus/LepikhovKG2015.pdf
+
+- year: 2015
+  authors: E.S. Merkulov, A.V. Lepikhov, A.V. Pridannikov
+  title: Numerical simulation of the high-altitude hypersonic flow of a body under shock-wave interaction
+  venue: >-
+    XXX International Conference on Equations of State for Matter: Book of Abstracts,
+    1–6 March 2015, Elbrus, Kabardino-Balkaria, Russia
+  type: conference
+  area: cfd
+  pdf: /2015-Elbrus/LepikhovMP2015.pdf
+  slides: /2015-Elbrus/LepikhovMP2015-Poster.pdf
+
+- year: 2015
+  authors: A.V. Lepikhov, G.F. Kostin
+  title: Modeling ablation of thermal protection system in high enthalpy gas flow
+  venue: >-
+    14th International Conference “Aviation and Cosmonautics — 2015”,
+    16–20 November 2015, Moscow, Abstracts, 520 p.
+  type: conference
+  area: cfd
+
+# ---------------------------------------------------------------- 2014
+
+- year: 2014
+  authors: A.V. Lepikhov
+  title: Опыт моделирования тепловых процессов в ANSYS Mechanical
+  venue: CADFEM Review, 2014, No. 1, pp. 42–47
+  type: journal
+  area: cfd
+  lang: ru
+
+- year: 2014
+  authors: A.V. Lepikhov, M.S. Svintsova
+  title: Валидация метода прямого статистического моделирования для задач высотной гиперзвуковой аэрофизики затупленных тел
+  venue: >-
+    XX научно-техническая конференция молодых ученых и специалистов,
+    10–14 ноября 2014, Королев, РКК «Энергия»
+  type: conference
+  area: cfd
+  lang: ru
+
+# ---------------------------------------------------------------- 2012
+
+- year: 2012
+  authors: A.V. Lepikhov
+  title: О влиянии процесса старения материалов теплозащиты на тепловые режимы спускаемых летательных аппаратов
+  venue: Ракетно-космическая техника (РКТ), 2012
+  type: journal
+  area: cfd
+  lang: ru
+  pdf: /2012-RKT/Лепихов2012_РКТ.pdf
+
+# ---------------------------------------------------------------- 2011
+
+- year: 2011
+  authors: A.A. Dyakonov, D.V. Ardashev, A.V. Lepikhov
+  title: Имитационное моделирование процессов шлифования на основе применения высокопроизводительных кластеров и технологий параллельных вычислительных процессов
+  venue: >-
+    Фундаментальные и прикладные проблемы техники и технологии,
+    2011, № 2/2(286), С. 29–34
+  type: journal
+  area: hpc
+  lang: ru
+
+- year: 2011
+  authors: A.A. Dyakonov, A.V. Lepikhov
+  title: Имитационное стохастическое моделирование процессов высокоскоростной механической обработки (на примере шлифования)
+  venue: >-
+    Международная научная конференция «Параллельные вычислительные технологии»
+    (ПаВТ'2011), 28 марта — 1 апреля 2011, Москва
+  type: conference
+  area: hpc
+  lang: ru
+  pdf: /2011-PaVT/028.pdf
+
+# ---------------------------------------------------------------- 2010
+
+- year: 2010
+  authors: A.V. Lepikhov, L.B. Sokolinsky
+  title: Query Processing in a DBMS for Cluster Systems
+  venue: Programming and Computer Software, 2010, Vol. 36, No. 4, pp. 205–215
+  type: journal
+  area: db
+  doi: 10.1134/S0361768810040031
+  pdf: /2010-Programming/LepikhovS2010_EN.pdf
+
+- year: 2010
+  authors: A.V. Lepikhov, L.B. Sokolinsky
+  title: Query Evaluation Techniques for Cluster Database Systems
+  venue: >-
+    Advances in Databases and Information Systems (ADBIS 2010), Springer,
+    Novi Sad, Serbia, 20–24 September 2010
+  type: conference
+  area: db
+  slides: /2010-ADBIS/ADBIS-2010_Slides.pdf
+
+# ---------------------------------------------------------------- 2009
+
+- year: 2009
+  authors: A.V. Lepikhov
+  title: Параллельная СУБД для кластерных вычислительных систем на базе PostgreSQL
+  venue: >-
+    IX Всероссийская конференция «Высокопроизводительные параллельные вычисления
+    на кластерных системах», 2–3 ноября 2009, Владимир
+  type: conference
+  area: db
+  lang: ru
+  pdf: /2009-HPC/lepikhov09.pdf
+
+- year: 2009
+  authors: A.V. Gerenshtein, A.A. Dyakonov, A.V. Lepikhov
+  title: Применение параллельных алгоритмов для компьютерной реализации имитационной стохастической модели теплофизики процессов шлифования
+  venue: >-
+    Прогрессивные технологии в машиностроении: сб. науч. тр.,
+    Челябинск, Изд-во ЮУрГУ, 2009, С. 103–105
+  type: conference
+  area: hpc
+  lang: ru
+
+# ---------------------------------------------------------------- 2008
+
+- year: 2008
+  authors: A.V. Lepikhov
+  title: Методы обработки запросов в системах управления базами данных для многопроцессорных систем с иерархической архитектурой
+  venue: >-
+    Ph.D. thesis (Candidate of Sciences, Physics and Mathematics; speciality 05.13.11),
+    South Ural State University, Chelyabinsk, 2008.
+    Supervisor: Prof. L.B. Sokolinsky
+  type: thesis
+  area: db
+  lang: ru
+  pdf: /2008-Dissert/Диссертация.pdf
+  slides: /2008-Dissert/presentation.pdf
+
+- year: 2008
+  authors: A.V. Lepikhov
+  title: Использование метода частичного зеркалирования при балансировке загрузки в параллельных СУБД для кластерных систем
+  venue: >-
+    Вестник ЮУрГУ, серия «Математическое моделирование и программирование»,
+    2008, № 27 (127), вып. 2, С. 57–62
+  type: journal
+  area: db
+  lang: ru
+  pdf: /2008a-VestnikSUSU/Lepikhov08a.pdf
+
+- year: 2008
+  authors: A.V. Lepikhov
+  title: Модель вариантов использования параллельной системы управления базами данных для грид
+  venue: >-
+    Вестник ЮУрГУ, серия «Математическое моделирование и программирование»,
+    2008, № 15 (115), вып. 1, С. 42–53
+  type: journal
+  area: db
+  lang: ru
+  pdf: /2008-VestnikSUSU/Lepikhov_VestnikSUSU-08.pdf
+
+- year: 2008
+  authors: A.V. Lepikhov
+  title: Балансировка загрузки при выполнении операций соединения в параллельных СУБД для кластерных систем
+  venue: >-
+    Научный сервис в сети Интернет: решение больших задач,
+    тр. Всерос. науч. конф., 22–27 сентября 2008, Новороссийск, С. 292–295
+  type: conference
+  area: db
+  lang: ru
+  pdf: /2008-Abrau/Lepikhov_Abrau-08.pdf
+  slides: /2008-Abrau/Lepikhov_slides_Abrau-08.pdf
+
+# ---------------------------------------------------------------- 2007
+
+- year: 2007
+  authors: P.S. Kostenetskii, A.V. Lepikhov, L.B. Sokolinskii
+  title: Technologies of parallel database systems for hierarchical multiprocessor environments
+  venue: Automation and Remote Control, 2007, No. 5, pp. 112–125
+  type: journal
+  area: db
+  pdf: /2007-Automation/Technologies_of_parallel_database_systems_for_hier.pdf
+
+- year: 2007
+  authors: P.S. Kostenetskii, A.V. Lepikhov, L.B. Sokolinskii
+  title: Технологии параллельных систем баз данных для иерархических многопроцессорных сред
+  venue: Автоматика и телемеханика, 2007, № 5, С. 112–125
+  type: journal
+  area: db
+  lang: ru
+  pdf: /2007-Automation/paper2007.pdf
+
+- year: 2007
+  authors: A.V. Lepikhov, A.V. Shumov
+  title: Инкапсуляция параллелизма в последовательных СУБД
+  venue: >-
+    Международная научная конференция «Параллельные вычислительные технологии»
+    (ПаВТ'2007), 29 января — 2 февраля 2007, Челябинск
+  type: conference
+  area: db
+  lang: ru
+  pdf: /2007-PaVT/LepikhovSh_poster_PaVT-07.pdf
+
+# ---------------------------------------------------------------- 2006
+
+- year: 2006
+  authors: A.V. Lepikhov, L.B. Sokolinsky
+  title: Data Placement Strategy in Hierarchical Symmetrical Multiprocessor Systems
+  venue: >-
+    Proceedings of the Spring Young Researchers Colloquium in Databases and
+    Information Systems (SYRCoDIS 2006), 1–2 June 2006, Moscow State University,
+    pp. 31–36
+  type: conference
+  area: db
+  pdf: /2006-SYRCoDIS/lepikhovs06a.pdf
+  slides: /2006-SYRCoDIS/Syrcodis06.pdf
+
+- year: 2006
+  authors: A.V. Lepikhov, L.B. Sokolinsky
+  title: Стратегия размещения данных в многопроцессорных системах с симметричной иерархической архитектурой
+  venue: >-
+    Научный сервис в сети Интернет: технологии параллельного программирования,
+    тр. Всерос. науч. конф., 18–23 сентября 2006, Новороссийск, С. 39–42
+  type: conference
+  area: db
+  lang: ru
+  pdf: /2006-Abrau/LepikhovS-06a.pdf
+
+- year: 2006
+  authors: P.S. Kostenetskii, A.V. Lepikhov, L.B. Sokolinskii
+  title: Некоторые аспекты организации параллельных систем баз данных для мультипроцессоров с иерархической архитектурой
+  venue: >-
+    Алгоритмы и программные средства параллельных вычислений: сб. науч. тр.,
+    Екатеринбург, УрО РАН, 2006
+  type: conference
+  area: db
+  lang: ru
+  pdf: /2006-URORAN/paper.pdf
+
+- year: 2006
+  authors: A.V. Lepikhov
+  title: Принципы организации СУБД для GRID
+  venue: >-
+    II Международная конференция «Распределенные вычисления и Грид-технологии
+    в науке и образовании», 26–30 июня 2006, Дубна
+  type: conference
+  area: db
+  lang: ru
+
+- year: 2006
+  authors: A.V. Lepikhov
+  title: Инкапсуляция параллелизма в системах баз данных с открытым исходным кодом
+  venue: >-
+    Научно-практическая конференция «Молодёжная наука Южного Урала»,
+    20 декабря 2006, Челябинск
+  type: conference
+  area: db
+  lang: ru
+  pdf: /2006-SouthUralScience/Lepikhov06.pdf
+
+# ---------------------------------------------------------------- 2005
+
+- year: 2005
+  authors: L.B. Sokolinsky, P.S. Kostenetskii, A.V. Lepikhov, M.L. Tsymbler
+  title: Методы организации систем баз данных для вычислительных кластеров и GRID
+  venue: >-
+    V Международный научно-практический семинар «Высокопроизводительные
+    параллельные вычисления на кластерных системах», 22–25 ноября 2005,
+    Нижний Новгород
+  type: conference
+  area: db
+  lang: ru
+  pdf: /2005-HPCC/NizhNov_05.pdf
+
+# ---------------------------------------------------------------- 2004
+
+- year: 2004
+  authors: M.L. Tsymbler, L.B. Sokolinsky, A.V. Lepikhov
+  title: Прототипирование параллельной СУБД как основа учебного курса по параллельным системам баз данных
+  venue: >-
+    Международная научная конференция «Суперкомпьютерные системы и их применение»
+    (SSA'2004), 26–28 октября 2004, Минск, С. 212–217
+  type: conference
+  area: db
+  lang: ru
+  pdf: /2004-SSA/ZymblerSL_SSA-04.pdf
+
+- year: 2004
+  authors: A.V. Lepikhov
+  title: Реализация функций стандарта MPI для эмуляции обменов сообщениями между узлами многопроцессорной вычислительной системы
+  venue: >-
+    Высокопроизводительные параллельные вычисления на кластерных системах,
+    материалы IV международного научно-практического семинара, Самара,
+    Изд-во Самарского научного центра РАН, 2004, С. 179–180
+  type: conference
+  area: db
+  lang: ru
+  pdf: /2004-HPCC-Seminar/Lepikhov2004.pdf

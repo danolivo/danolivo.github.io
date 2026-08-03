@@ -1,0 +1,41 @@
+# Grants, awards and registered software, as listed in the `conf` repository.
+
+grants:
+  - year: 2017
+    title: >-
+      Award of the President of the Russian Federation for outstanding
+      achievements to scientists, designers, technologists and other engineering
+      and technical workers of state defence procurement organizations
+
+  - year: 2009
+    title: Grant of the President of the Russian Federation for Young Scientists, МК-3535.2009.9
+    url: https://grants.extech.ru/grants/res/winners.php?OZ=9&TZ=K&year=2009
+
+  - year: 2009
+    title: Russian Foundation for Basic Research, project no. 09-07-00241-a
+    url: https://www.rfbr.ru/rffi/ru/project_search/o_51908
+
+  - year: 2006
+    title: Russian Foundation for Basic Research, project no. 06-07-89148
+    url: https://www.rfbr.ru/rffi/ru/project_search/o_281873
+
+  - year: 2003
+    title: Russian Foundation for Basic Research, project no. 03-07-90031
+    url: https://www.rfbr.ru/rffi/ru/project_search/o_229784
+
+# Rospatent certificates of state registration of computer programs.
+software:
+  - year: 2018
+    title: FluentWallAblation
+    number: № 2018660230, 21 August 2018
+    authors: A.V. Lepikhov
+
+  - year: 2013
+    title: Урал-А
+    number: № 2013611732, 4 February 2013
+    authors: A.V. Lepikhov, V.V. Gusev, A.K. Elinevsky
+
+  - year: 2008
+    title: Параллельная СУБД «Омега» для кластерных систем
+    number: № 2008614996, 3 October 2008
+    authors: A.V. Lepikhov, L.B. Sokolinsky, M.L. Tsymbler

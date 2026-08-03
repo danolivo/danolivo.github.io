@@ -1,0 +1,128 @@
+# Experience and education.
+#
+# Primary source: the author's own CV, github.com/danolivo/resume (resume-w.tex,
+# "adopt resume for the western reader"). Dates and duties follow it. The
+# pre-2017 entries (Makeyev, SUSU) come from LinkedIn — the CV trims them for
+# length, the site keeps them because the whole arc is the point here.
+#
+# Titles are rendered for an English-speaking reader, confirmed with the author:
+#   "PostgreSQL Developer"        -> "PostgreSQL Core Developer" (the plain form
+#                                    reads as an application developer *using*
+#                                    Postgres, not one working on the engine)
+#   "Team Lead"                   -> "Tech Lead" (no direct reports)
+#   "Lead of the Optimization Lab"-> "Head of the Query Optimisation Lab",
+#                                    seniority per LinkedIn (Principal)
+#   "Guest Lecturer"              -> "Visiting Lecturer"
+#   доцент                        -> "Associate Professor" (NOT "Assistant
+#                                    Professor", which is a junior tenure-track
+#                                    role in English and understates it)
+#
+# An entry may carry either `role:` (single position) or `roles:` (several
+# positions at the same employer, newest first).
+
+experience:
+  - company: pgEdge
+    role: Staff Software Engineer
+    kind: contract, remote
+    period: Sep 2025 — present
+    where: Madrid, Spain
+    body: >-
+      Active-active logical replication across PostgreSQL clusters. Led the
+      architectural redesign of the Spock extension, removing its dependencies
+      on patches to core Postgres.
+
+  - company: Postgres Professional
+    period: Dec 2017 — Sep 2025
+    kind: remote
+    roles:
+      - role: Principal Software Engineer, Head of the Query Optimisation Lab
+        period: Apr 2023 — Sep 2025
+        body: >-
+          Led query optimiser development — SwitchJoin, built-in
+          re-optimisation, shuffle join, distributed query optimisation — and
+          implemented the re-optimisation feature for the enterprise fork.
+          Contributed optimisation features and patch reviews to PostgreSQL
+          core, reviewed the lab's code, spoke at conferences on query
+          optimisation, and kept a technical blog.
+      - role: PostgreSQL Core Developer, Tech Lead
+        period: Oct 2021 — Apr 2023
+        body: >-
+          Designed the query plan freezing extension (sr_plan) and architected
+          the Shardman prototype, a distributed database system built on
+          PostgreSQL. Contributed patches and reviews to core, including
+          self-join removal and GROUP BY optimisation.
+      - role: PostgreSQL Core Developer
+        period: Dec 2017 — Oct 2021
+        body: >-
+          Developed the Multimaster extension and implemented parallel recovery;
+          maintained the Adaptive Query Optimiser and its CI. Contributed
+          self-join removal, WAL compression and BTree bulk deletion to
+          PostgreSQL core.
+
+  - company: Academician V.P. Makeyev State Rocket Centre
+    role: Senior Scientist
+    kind: contract, full-time
+    period: Mar 2010 — Mar 2018
+    where: Miass, Russia
+    body: >-
+      Team lead for CAE modelling of supersonic and hypersonic flows around
+      re-entry vehicles and upper spacecraft stages; computation of heat loads
+      and thermal design of shielding systems; design and implementation of
+      mathematical models of high-enthalpy flows. Tooling: ANSYS Fluent with
+      user-defined functions, FlowVision, the Monte-Carlo code SMILE, ANSYS
+      Mechanical and Mechanical APDL, plus purpose-built thermal analysis
+      programs.
+
+  - company: South Ural State University
+    period: Jul 2005 — May 2012
+    roles:
+      - role: Visiting Lecturer
+        kind: part-time
+        period: Sep 2010 — May 2012
+        where: Miass, Russia
+        body: Gas dynamic analysis; parallel computation in CAE software.
+      - role: Associate Professor
+        kind: full-time
+        period: Jul 2005 — May 2010
+        where: Chelyabinsk, Russia
+        body: >-
+          Research on parallel methods for database systems and C/C++/Java
+          systems programming. Taught software engineering, parallel methods for
+          database systems, technical aspects of IT law, and geoinformation
+          systems in a database context.
+
+education:
+  # Wording follows the author's own CV. For the record, the автореферат says
+  # «кандидат физико-математических наук», speciality 05.13.11, and its title
+  # page carries South Ural State University, where the work was carried out.
+  - degree: Ph.D. in Computer Science (distributed databases)
+    where: Lomonosov Moscow State University, Moscow
+    year: 2005–2009
+    body: >-
+      Thesis: query processing methods in database management systems for
+      multiprocessor systems with a hierarchical architecture. Supervisor:
+      Prof. L.B. Sokolinsky.
+
+  - degree: M.S. in Computer Science
+    where: Chelyabinsk State University
+    year: 2000–2005
+
+competencies:
+  - label: Languages
+    items: C/C++, SQL, Perl, Python, HTML/CSS, JavaScript, LaTeX
+  - label: Expertise
+    items: >-
+      relational databases, PostgreSQL internals, query optimisation, code
+      review, performance tuning, scalability, team management
+  - label: Tools and platforms
+    items: >-
+      PostgreSQL, MySQL, MS SQL Server, Citus, GitHub Actions, Jira, Confluence,
+      Linux, bash, gdb, perf, git
+
+certifications:
+  - year: 2023
+    title: Verified International Academic Qualifications, World Education Services
+  - year: 2022
+    title: IELTS General Training, overall band score 7, British Council
+  - year: 2014
+    title: "Hypersonics: from shock waves to scramjets, edX honor code certificate"

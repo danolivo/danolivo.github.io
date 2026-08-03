@@ -1,0 +1,73 @@
+# Conference and meetup talks. Titles and co-authors taken from the title slide
+# of each deck in the `conf` repository, not from memory.
+#
+#   year, title, event, place, coauthors, lang, url (schedule), slides, video
+#   slides/video paths are relative to site.materials unless absolute.
+
+- year: 2026
+  title: "pg_track_optimizer: finding query planning issues before they impact performance"
+  event: PG BootCamp Russia 2026
+  place: Moscow, 19 March 2026
+  lang: ru
+  url: https://pgbootcamp.ru/ru/2026-moscow
+  slides: /2026-PGBootcamp/pg_track_optimizer_presentation.pdf
+  video: https://youtu.be/hG21nGJ-ZGQ
+
+- year: 2024
+  title: "pg_index_stats: managing extended statistics automatically"
+  event: FOSSASIA Summit 2024, PGDay track
+  place: Hanoi, Vietnam, 8–10 April 2024
+  coauthors: A. Rybakina
+  slides: /2024-FossAsia/pg_index_stats.pdf
+
+- year: 2024
+  title: Does PostgreSQL respond to the challenge of analytical queries?
+  event: PostgreSQL Thailand Development Group
+  slides: /2024-Postgres-Analytics/postgres-analytics.pdf
+
+- year: 2023
+  title: "Query plan freezing extension: design, issues and lessons learned"
+  event: Israeli PostgreSQL Jam 2023
+  coauthors: D. Belyalov, A. Rybakina
+  url: https://pgday.org.il
+  slides: /2023-PGDay-Israel/sr-plan.pdf
+
+- year: 2023
+  title: Real-time query replanning of hopeless queries
+  event: PGConf.Russia 2023
+  coauthors: A. Rybakina
+  url: https://pgconf.ru/en/talk/1589471
+  slides: /2023-PGConf-spb/PGConf-Spb-2023.pdf
+
+- year: 2021
+  title: Planner's Memory
+  event: PGConf.Russia 2021
+  slides: /2021-PGConfRU/Planner's%20Memory.pdf
+
+- year: 2020
+  title: A couple of new features towards the Postgres-based sharding
+  event: PGConf China / Asia 2020
+  url: https://postgresconf.org/conferences/AsiaChina2020/program/proposals/a-couple-of-new-features-towards-the-postgres-based-sharding
+  slides: /2020-PGConf_CN_ASIA/Lepikhov_PGConf_CN_Asia2020.odp
+
+- year: 2019
+  title: "Beyond the pushdowns: distributed query planning and execution"
+  event: PGConf.EU 2019
+  place: Milan, Italy, 16 October 2019
+  coauthors: A. Korotkov
+  url: https://www.postgresql.eu/events/pgconfeu2019/schedule/session/2594-beyond-the-pushdowns-distributed-query-planning-and-execution/
+  slides: /2019-PGConf_EU/KorotkovL2019-distributed_queries.pdf
+
+- year: 2019
+  title: Shardman — постгрес для кластеров. Что есть сейчас, что будет завтра
+  event: HighLoad++ Siberia 2019
+  lang: ru
+  url: https://www.highload.ru/siberia/2019/abstracts/5333
+  slides: /2019-HighLoadPP_Siberia/LepikhovAV-HLS2019.pdf
+  video: https://youtu.be/IoNGmwgo9ZY
+
+# Only talks actually delivered belong here. Two decks in `conf` look like talks
+# but are not, and live on the projects page instead:
+#   2025-MiddleOut/MiddleOut.pdf          — meetup material, not presented publicly yet
+#   2026a-Enforce-Presorted-Scan/*.pdf    — an open discussion on pgsql-hackers,
+#                                           despite the "pgconf.dev 2026" title slide

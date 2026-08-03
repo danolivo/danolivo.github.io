@@ -1,0 +1,228 @@
+# Projects, grouped on the page by `group`:
+#   core      — work contributed to PostgreSQL itself
+#   system    — database systems worked on as a whole
+#   extension — PostgreSQL extensions
+#   prototype — planner and optimiser experiments (the former "OptLab" page)
+#
+# Descriptions are the author's own wording, lightly edited.
+
+# The `core` list is taken from github.com/danolivo/resume. No release numbers
+# are claimed here, since the CV does not state them.
+
+- name: DBMS Digest
+  group: tool
+  status: live
+  featured: true
+  summary: a weekly, ad-free, fact-checked roundup of what actually happened in databases
+  body: >-
+    "Signal over sales" — a weekly roundup of what actually happened in
+    PostgreSQL and the wider database world: new features and internals,
+    threads worth reading on pgsql-hackers, -bugs and -performance, community
+    arguments, migration case studies, techniques borrowed from SQL Server,
+    Oracle, MySQL and OceanBase, and academic work. Fifteen to twenty-five
+    curated links an edition, no marketing, written for people who work on
+    database internals rather than for buyers. Generated rather than
+    hand-assembled — the reasoning behind that is in the blog post below.
+  links:
+    - name: read it
+      url: https://danolivo.github.io/dbms-digest/
+    - name: RSS
+      url: https://danolivo.github.io/dbms-digest/feed.xml
+    - name: source
+      url: https://github.com/danolivo/dbms-digest
+    - name: why it exists
+      url: https://danolivo.substack.com/p/a-generative-postgres-digest-from
+
+- name: Self-join removal
+  group: core
+  body: >-
+    Remove an unnecessary self-join from the query tree when it can be proved
+    that a single scan returns the same data.
+  links:
+    - name: working branch
+      url: https://github.com/postgrespro/postgres/tree/self-join-elimination
+
+- name: GROUP BY optimisation
+  group: core
+  body: >-
+    The optimiser is free to choose the order of grouping columns; putting the
+    column with the greatest number of distinct values first cuts comparison
+    work.
+  links:
+    - name: working branch
+      url: https://github.com/postgrespro/postgres/tree/sort-columnsnum
+
+- name: WAL compression
+  group: core
+  body: Compression of write-ahead log records.
+
+- name: BTree bulk deletion
+  group: core
+  body: Bulk deletion of entries during B-tree vacuuming.
+
+- name: Spock
+  group: extension
+  years: since 2025
+  status: open source
+  featured: true
+  summary: active-active logical replication across PostgreSQL clusters
+  repo: https://github.com/pgEdge/spock
+  body: >-
+    Logical multi-master replication for PostgreSQL. Work here covers
+    active-active replication across clusters and an architectural redesign that
+    removed the extension's dependency on patches to core Postgres.
+
+- name: Adaptive Query Optimiser (AQO)
+  group: extension
+  years: 2017–2021
+  status: open source
+  repo: https://github.com/postgrespro/aqo
+  body: >-
+    Database systems usually process queries of quite similar structure. The idea
+    is to save information about the actual number of rows produced by query plan
+    nodes and reuse it during the next execution. Two significant hurdles were
+    managed here: node signatures had to be invented to match cardinalities to
+    specific nodes during planning, and the knowledge base had to be generalised.
+
+- name: pg_track_optimizer
+  group: extension
+  years: since 2023
+  status: open source
+  featured: true
+  summary: finds queries the planner got wrong, before they become an incident
+  repo: https://github.com/danolivo/pg_track_optimizer
+  body: >-
+    A lightweight PostgreSQL extension designed to identify poorly optimised
+    queries — spotting planning problems before they show up as a performance
+    incident.
+
+- name: pg_index_stats
+  group: extension
+  status: open source
+  featured: true
+  summary: derives extended statistics automatically from the indexes you already have
+  repo: https://github.com/danolivo/pg_index_stats
+  body: >-
+    Computing multivariate statistics automatically for every combination of
+    columns is impractical. The conjecture is that index structure already tells
+    you which column sets are most frequently used for extracting data, and those
+    are exactly the ones that matter for building good plans.
+
+- name: Query plan freezing (sr_plan)
+  group: extension
+  status: open source
+  repo: https://github.com/postgrespro/sr_plan
+  body: >-
+    Freeze a query plan and reuse it, instead of letting the planner reconsider
+    the query on every execution. Design, pitfalls and lessons learned were
+    presented at the Israeli PostgreSQL Jam in 2023.
+
+- name: Shardman
+  group: system
+  status: proprietary
+  body: >-
+    An attempt to build a distributed database system natively based on
+    PostgreSQL. The fundamental conjecture is that the standard foreign data
+    wrapper technique, as implemented in postgres_fdw, can be enough to partition
+    data across multiple servers. The main efforts went into distributed
+    timestamp-based transactions (CSN), optimiser extensibility, and the
+    must-have features for distributed execution — global tables, asymmetric
+    join, shuffle join.
+  links:
+    - name: CSN discussion on pgsql-hackers
+      url: https://www.postgresql.org/message-id/flat/07b2c899-4ed0-4c87-1327-23c750311248%40postgrespro.ru
+
+- name: Multimaster
+  group: system
+  status: open source
+  repo: https://github.com/danolivo/mmts
+  body: >-
+    Built-in high availability for PostgreSQL, leveraging a global transaction ID
+    and logical replication. From the application's standpoint all servers hold
+    equivalent data up to MVCC, with automatic conflict resolution. The
+    trade-offs: transactions default to REPEATABLE READ isolation, and DML
+    performance degrades as instances are added. The distance between servers is
+    bounded only by network speed and the internal heartbeat timeout.
+  links:
+    - name: documentation
+      url: https://postgrespro.github.io/mmts/
+    - name: Postgres Pro Enterprise
+      url: https://postgrespro.com/docs/enterprise/16/multimaster
+
+- name: Omega — parallel DBMS for cluster systems
+  group: system
+  years: 2004–2008
+  status: archived
+  body: >-
+    The subject of the Ph.D. work: query processing in a parallel DBMS for
+    multiprocessor systems with a hierarchical architecture. Introduced a data
+    placement and partial-mirroring strategy, and a load balancing method for
+    parallel query execution on clusters.
+
+- name: Asymmetric join
+  group: prototype
+  body: >-
+    Oriented mostly at distributed execution. Works much like the partitionwise
+    join feature, but allows a plain table to be joined with a partitioned one.
+  links:
+    - name: branch
+      url: https://github.com/postgrespro/postgres/tree/asymmetric-join
+
+- name: Hybrid bottom-up / top-down planning
+  group: prototype
+  body: >-
+    PostgreSQL plans bottom-up, building cheapest paths from the leaves upward,
+    which makes it awkward to exploit constraints that only become visible near
+    the top of the tree. This explores a hybrid — going bottom-up and then down
+    again — so decisions made high up can steer the search below. Active work,
+    not yet presented publicly.
+
+- name: Switch Join
+  group: prototype
+  body: >-
+    An adaptive join that stops betting everything on the planner's cardinality
+    estimate. Two plans are prepared up front — an optimistic one, typically a
+    nested loop, and a pessimistic fallback, typically hash or merge join. During
+    execution outer tuples are materialised while actual row counts are watched;
+    once the count crosses a threshold, execution switches to the pessimistic
+    plan mid-flight, reusing the already-materialised data without a restart or a
+    replan. Author and lead developer, with A. Rybakina, who presented the work
+    at pgconf.dev 2025 in Montréal. The source is not public.
+  links:
+    - name: how it works
+      url: https://alenarybakina.substack.com/p/switch-join-postgresql-that-adapts
+    - name: pgconf.dev 2025 schedule
+      url: https://2025.pgconf.dev/schedule.html
+
+- name: Query re-optimisation
+  group: prototype
+  body: >-
+    Detect at run time that a plan has gone hopelessly wrong and replan the
+    query instead of waiting for it to finish. Designed and implemented for the
+    Postgres Pro enterprise fork; presented at PGConf.Russia 2023.
+
+- name: Extended statistics for hash join bucket estimation
+  group: prototype
+  body: >-
+    Use extended statistics to estimate the number of hash join buckets more
+    precisely.
+  links:
+    - name: branch
+      url: https://github.com/postgrespro/postgres/tree/multivariate-buckets-estimation
+
+- name: Pre-sorted outer path on an ORDER BY prefix
+  group: prototype
+  featured: true
+  summary: sort the outer side of a join so nothing has to be sorted above it
+  body: >-
+    Queries of the shape "top-N items with their details" — an ORDER BY and a
+    LIMIT over a normalised schema reached through several optional LEFT JOINs —
+    currently sort late and high in the tree. This work intensifies the sorted
+    NestLoop trick: when the outer side of a nested loop appears in the
+    query_pathkeys prefix, the planner tries to build a pre-sorted outer path
+    even with no index on the sort expression, and offers a join with sorted
+    output. The executor's tuple-bound propagation is extended so the LIMIT
+    reaches through the outer side. Work in progress on pgsql-hackers.
+  links:
+    - name: pgsql-hackers thread
+      url: https://www.postgresql.org/message-id/19a9265c-c441-4a43-bc0d-dac533438da0%40gmail.com
