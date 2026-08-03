@@ -36,7 +36,7 @@ between 2012 and 2017, during eight years at the Makeyev State Rocket Centre.</p
 {%- for s in site.data.awards.software %}
   <li>
     <span class="authors">{{ s.authors }}.</span>
-    <span class="btitle">{{ s.title }}.</span>
+    <span class="btitle" lang="ru">{% include sentence.html text=s.title %}</span>
     <span class="venue">Rospatent certificate of state registration of a computer
     program, {{ s.number }}.</span>
   </li>
