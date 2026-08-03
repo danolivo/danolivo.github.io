@@ -8,15 +8,16 @@ Parameters:
 <h3>{{ group.name }}</h3>
 <ul class="biblio">
   {%- for p in group.items %}
+  {%- capture venue_text %}{{ p.venue | strip }}{% if p.lang == "ru" %} (in Russian){% endif %}{% endcapture -%}
   <li>
-    <span class="authors">{{ p.authors }}.</span>
-    <span class="btitle">{{ p.title }}.</span>
-    <span class="venue">{{ p.venue }}{% if p.lang == "ru" %} (in Russian){% endif %}.</span>
+    <span class="authors">{% include sentence.html text=p.authors %}</span>
+    <span class="btitle"{% if p.lang == "ru" %} lang="ru"{% endif %}>{% include sentence.html text=p.title %}</span>
+    <span class="venue">{% include sentence.html text=venue_text %}</span>
     {%- capture refs -%}
-      {%- if p.pdf %}<a href="{{ site.materials }}{{ p.pdf }}">pdf</a>{% endif -%}
-      {%- if p.slides %}<a href="{{ site.materials }}{{ p.slides }}">slides</a>{% endif -%}
-      {%- if p.doi %}<a href="https://doi.org/{{ p.doi }}">doi</a>{% endif -%}
-      {%- if p.url %}<a href="{{ p.url }}">link</a>{% endif -%}
+      {%- if p.pdf %}<a href="{{ site.materials }}{{ p.pdf }}" aria-label="PDF: {{ p.title | escape }}">pdf</a>{% endif -%}
+      {%- if p.slides %}<a href="{{ site.materials }}{{ p.slides }}" aria-label="Slides: {{ p.title | escape }}">slides</a>{% endif -%}
+      {%- if p.doi %}<a href="https://doi.org/{{ p.doi }}" aria-label="DOI: {{ p.title | escape }}">doi</a>{% endif -%}
+      {%- if p.url %}<a href="{{ p.url }}" aria-label="Publisher page: {{ p.title | escape }}">link</a>{% endif -%}
     {%- endcapture -%}
     {%- if refs != "" %}<span class="refs">{{ refs }}</span>{% endif %}
   </li>

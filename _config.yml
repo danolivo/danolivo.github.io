@@ -6,6 +6,14 @@ description: >-
   aerothermodynamics of high-enthalpy hypersonic flows.
 author: Andrei Lepikhov
 
+# jekyll-seo-tag reads og:image from the page, not from site config, so set it
+# for every page here. Without it a shared link previews with no picture.
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /assets/img/portrait.jpg
+
 url: https://danolivo.github.io
 baseurl: ""
 

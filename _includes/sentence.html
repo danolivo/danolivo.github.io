@@ -1,0 +1,9 @@
+{%- comment -%}
+Emits a string terminated by a single full stop. Adds one only when the text
+does not already end in terminal punctuation, so a title ending in "?" does not
+come out as "?." and a venue ending in "520 p." does not become "520 p..".
+Parameter: text — the string to terminate.
+{%- endcomment -%}
+{%- assign s = include.text | strip -%}
+{%- assign tail = s | slice: -1 -%}
+{%- if tail == "." or tail == "?" or tail == "!" -%}{{ s }}{%- else -%}{{ s }}.{%- endif -%}

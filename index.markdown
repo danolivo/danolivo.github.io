@@ -41,10 +41,11 @@ that have not landed anywhere yet.</p>
 
 <ul class="biblio">
 {%- for t in site.data.talks limit: 3 %}
+  {%- capture venue_text %}{{ t.event }}{% if t.place %}, {{ t.place }}{% endif %}{% endcapture -%}
   <li>
-    <span class="btitle">{{ t.title }}.</span>
-    <span class="venue">{{ t.event }}{% if t.place %}, {{ t.place }}{% endif %}.</span>
-    {%- if t.slides %}<span class="refs"><a href="{{ site.materials }}{{ t.slides }}">slides</a></span>{% endif %}
+    <span class="btitle"{% if t.lang == "ru" %} lang="ru"{% endif %}>{% include sentence.html text=t.title %}</span>
+    <span class="venue">{% include sentence.html text=venue_text %}</span>
+    {%- if t.slides %} <span class="refs"><a href="{{ site.materials }}{{ t.slides }}" aria-label="Slides: {{ t.title | escape }}">slides</a></span>{% endif %}
   </li>
 {%- endfor %}
 </ul>
