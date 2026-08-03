@@ -39,9 +39,13 @@ that have not landed anywhere yet.</p>
 
 ## Recent talks
 
-{% assign recent = site.data.talks | sort: "year" | reverse %}
+{%- comment -%}
+  No `sort: "year"` here: Liquid's sort is not stable, so entries sharing a year
+  came out in a different order on different machines. _data/talks.yml is kept
+  newest-first, so plain data order is both correct and reproducible.
+{%- endcomment -%}
 <ul class="biblio">
-{%- for t in recent limit: 3 %}
+{%- for t in site.data.talks limit: 3 %}
   <li>
     <span class="btitle">{{ t.title }}.</span>
     <span class="venue">{{ t.event }}{% if t.place %}, {{ t.place }}{% endif %}.</span>
