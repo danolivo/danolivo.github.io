@@ -99,6 +99,27 @@
     queries — spotting planning problems before they show up as a performance
     incident.
 
+- name: pg_middleout
+  group: extension
+  status: early stage
+  featured: true
+  summary: a top-down planning pass that memoises correlated subplans
+  repo: https://github.com/danolivo/pg_middleout
+  body: >-
+    Middle-out planning: a top-down pass added after the planner's usual
+    bottom-up phase. Its first use is memoising correlated subqueries. A
+    correlated subquery that cannot be pulled up into a join becomes a SubPlan
+    that re-executes for every outer row, and core PostgreSQL only attaches
+    Memoize to parameterised nested loops, never to a SubPlan — so repeated
+    parameter values are recomputed, which ORM-generated SQL does constantly.
+    The reason core cannot fix this in place is a chicken-and-egg problem: a
+    SubPlan is built during the parent query's expression preprocessing, before
+    the parent's own paths exist, so neither execution frequency nor the
+    distribution of parameter values — both needed to cost a Memoize — is known
+    yet. Both are available once upper-query planning has finished, which is
+    where this extension hooks in, walks the cheapest path tree, and swaps in a
+    memoised subplan when it pays for itself.
+
 - name: pg_index_stats
   group: extension
   status: open source
@@ -170,15 +191,6 @@
   links:
     - name: branch
       url: https://github.com/postgrespro/postgres/tree/asymmetric-join
-
-- name: Hybrid bottom-up / top-down planning
-  group: prototype
-  body: >-
-    PostgreSQL plans bottom-up, building cheapest paths from the leaves upward,
-    which makes it awkward to exploit constraints that only become visible near
-    the top of the tree. This explores a hybrid — going bottom-up and then down
-    again — so decisions made high up can steer the search below. Active work,
-    not yet presented publicly.
 
 - name: Switch Join
   group: prototype
