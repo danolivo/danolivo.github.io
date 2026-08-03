@@ -83,9 +83,8 @@
     nodes and reuse it during the next execution. Two significant hurdles were
     managed here: node signatures had to be invented to match cardinalities to
     specific nodes during planning, and the knowledge base had to be generalised.
-    Presented by A. Rybakina at pgconf.dev 2024.
   links:
-    - name: pgconf.dev 2024 session
+    - name: pgconf.dev 2024
       url: https://www.pgevents.ca/events/pgconfdev2024/sessions/session/147/
 
 - name: pg_track_optimizer
@@ -191,11 +190,13 @@
     once the count crosses a threshold, execution switches to the pessimistic
     plan mid-flight, reusing the already-materialised data without a restart or a
     replan. Author and lead developer, with A. Rybakina, who presented the work
-    at pgconf.dev 2025 in Montréal. The source is not public.
+    at PGConf.Spb 2024 and pgconf.dev 2025. The source is not public.
   links:
     - name: how it works
       url: https://alenarybakina.substack.com/p/switch-join-postgresql-that-adapts
-    - name: pgconf.dev 2025 schedule
+    - name: PGConf.Spb 2024
+      url: https://pgconf.ru/talk/1904075
+    - name: pgconf.dev 2025
       url: https://2025.pgconf.dev/schedule.html
 
 - name: Query re-optimisation
