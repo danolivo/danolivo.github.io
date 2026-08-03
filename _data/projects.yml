@@ -83,6 +83,10 @@
     nodes and reuse it during the next execution. Two significant hurdles were
     managed here: node signatures had to be invented to match cardinalities to
     specific nodes during planning, and the knowledge base had to be generalised.
+    Presented by A. Rybakina at pgconf.dev 2024.
+  links:
+    - name: pgconf.dev 2024 session
+      url: https://www.pgevents.ca/events/pgconfdev2024/sessions/session/147/
 
 - name: pg_track_optimizer
   group: extension

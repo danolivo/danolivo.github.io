@@ -22,7 +22,8 @@
 
 - year: 2024
   title: Does PostgreSQL respond to the challenge of analytical queries?
-  event: PostgreSQL Thailand Development Group
+  event: PGDay Israel 2024
+  place: Tel Aviv, 20 October 2024
   slides: /2024-Postgres-Analytics/postgres-analytics.pdf
 
 - year: 2023
@@ -34,19 +35,21 @@
 
 - year: 2023
   title: Real-time query replanning of hopeless queries
-  event: PGConf.Russia 2023
+  event: PGConf.SPB 2023
   coauthors: A. Rybakina
   url: https://pgconf.ru/en/talk/1589471
   slides: /2023-PGConf-spb/PGConf-Spb-2023.pdf
 
 - year: 2021
-  title: Planner's Memory
-  event: PGConf.Russia 2021
+  title: Postgres Planner's memory
+  event: PGConf.SPB 2021
+  lang: ru
   slides: /2021-PGConfRU/Planner's%20Memory.pdf
 
 - year: 2020
   title: A couple of new features towards the Postgres-based sharding
-  event: PGConf China / Asia 2020
+  event: PGConf.Asia 2020 and PGConf China 2020
+  place: 20 November 2020
   url: https://postgresconf.org/conferences/AsiaChina2020/program/proposals/a-couple-of-new-features-towards-the-postgres-based-sharding
   slides: /2020-PGConf_CN_ASIA/Lepikhov_PGConf_CN_Asia2020.odp
 
