@@ -46,6 +46,15 @@ jobs:
             exit 1
           fi
 
+      # Includes share the caller's scope, so an assignment inside one can
+      # clobber a loop variable and print the whole item as a Ruby hash.
+      - name: Check no Liquid data structures leaked into the page text
+        run: |
+          if grep -rn '=&gt;' _site --include='*.html'; then
+            echo "::error::a Ruby hash reached the rendered output (see matches above)"
+            exit 1
+          fi
+
       - uses: actions/upload-pages-artifact@v3
 
   deploy:

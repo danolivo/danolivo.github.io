@@ -3,7 +3,15 @@ Emits a string terminated by a single full stop. Adds one only when the text
 does not already end in terminal punctuation, so a title ending in "?" does not
 come out as "?." and a venue ending in "520 p." does not become "520 p..".
 Parameter: text — the string to terminate.
+
+Jekyll includes share the caller's variable scope, so every name here is
+prefixed. An earlier version assigned to `s` and clobbered the caller's `for s
+in ...` loop variable, which printed the whole loop item as a Ruby hash.
 {%- endcomment -%}
-{%- assign s = include.text | strip -%}
-{%- assign tail = s | slice: -1 -%}
-{%- if tail == "." or tail == "?" or tail == "!" -%}{{ s }}{%- else -%}{{ s }}.{%- endif -%}
+{%- assign sentence_text = include.text | strip -%}
+{%- assign sentence_tail = sentence_text | slice: -1 -%}
+{%- if sentence_tail == "." or sentence_tail == "?" or sentence_tail == "!" -%}
+{{- sentence_text -}}
+{%- else -%}
+{{- sentence_text -}}.
+{%- endif -%}
