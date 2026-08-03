@@ -10,14 +10,14 @@ title: Andrei Lepikhov
   <div class="intro-text">
     <h1>Andrei Lepikhov</h1>
     <p class="lede">{{ site.profile.role }} at {{ site.profile.company }}. Database systems
-    engineer with 15+ years on PostgreSQL internals — query optimisation, logical
+    engineer, working on PostgreSQL internals since 2017 — query optimisation, logical
     replication and distributed systems — with features contributed to PostgreSQL core.</p>
     <p>Ph.D. on query processing in parallel database systems for hierarchically organised
-    multiprocessors, then eight years in the Postgres optimiser laboratory at Postgres
-    Professional, and now active-active logical replication at pgEdge. Alongside that, and
-    for eight years before it, I was a senior scientist computing supersonic and hypersonic
-    flows around re-entry vehicles — heat loads, ablating thermal protection, rocket engine
-    combustion.</p>
+    multiprocessors, then eight years at Postgres Professional, latterly heading its query
+    optimisation lab, and now active-active logical replication at pgEdge. Alongside that,
+    and for eight years before it, I was a senior scientist computing supersonic and
+    hypersonic flows around re-entry vehicles — heat loads, ablating thermal protection,
+    rocket engine combustion.</p>
     <p>I write about Postgres internals at
     <a href="https://danolivo.substack.com">danolivo.substack.com</a>.</p>
     <p class="meta">{{ site.profile.location }} &middot;
