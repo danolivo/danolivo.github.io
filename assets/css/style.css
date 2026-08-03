@@ -98,9 +98,11 @@ code {
 .intro { display: flex; flex-wrap: wrap; gap: 1.5rem; align-items: flex-start; }
 .intro-text { flex: 1 1 20rem; }
 .intro-text .lede { font-size: 1.1rem; margin-bottom: 0.75rem; }
+/* Wider than a head-and-shoulders shot would need: the frame carries the
+   laptop and its Postgres sticker as well as the face. */
 .intro .portrait {
   flex: 0 0 auto;
-  width: 8.5rem;
+  width: 11rem;
   height: auto;
   border-radius: 4px;
 }

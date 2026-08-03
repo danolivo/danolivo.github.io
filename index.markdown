@@ -5,7 +5,8 @@ title: Andrei Lepikhov
 
 <div class="intro">
   <img class="portrait" src="{{ '/assets/img/portrait.jpg' | relative_url }}"
-       width="480" height="480" alt="Andrei Lepikhov">
+       width="720" height="540"
+       alt="Andrei Lepikhov at his laptop, a PostgreSQL elephant sticker on the lid">
   <div class="intro-text">
     <h1>Andrei Lepikhov</h1>
     <p class="lede">{{ site.profile.role }} at {{ site.profile.company }}. Database systems
