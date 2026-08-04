@@ -49,13 +49,12 @@ links:
 # Base URL of the companion repository that stores papers, slides and benchmarks.
 materials: https://github.com/danolivo/conf/blob/main
 
-# Paste the tokens from Search Console and Bing Webmaster Tools here and they
-# become verification meta tags. Both are needed only once, to claim the site
-# and submit https://danolivo.github.io/sitemap.xml for crawling.
-# Leave commented until the tokens exist: empty values emit empty meta tags.
-# webmaster_verifications:
-#   google: "paste-the-search-console-token"
-#   bing: "paste-the-bing-token"
+# Ownership proof for the search engines, rendered as verification meta tags.
+# Not secret — they are served in the page source by design. Add a key only once
+# you have its token: an empty value emits an empty meta tag.
+# Bing can be claimed by importing the Google property instead of using a token.
+webmaster_verifications:
+  google: "BTZgjdxhDjZpw5gAWkxmeRaQHFba8M6_mHhjTueR8Rs"
 
 plugins:
   - jekyll-seo-tag
