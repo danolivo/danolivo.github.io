@@ -59,6 +59,7 @@ webmaster_verifications:
 plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
+  - jekyll-last-modified-at
 
 exclude:
   - Gemfile

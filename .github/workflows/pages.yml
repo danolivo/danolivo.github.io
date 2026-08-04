@@ -23,6 +23,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          # jekyll-last-modified-at derives each page's <lastmod> from the commit
+          # that touched it, so the build needs the history, not just a snapshot.
+          fetch-depth: 0
 
       - uses: ruby/setup-ruby@v1
         with:
