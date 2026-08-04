@@ -4,6 +4,8 @@ title: Projects
 subtitle: Database systems, PostgreSQL extensions and planner experiments.
 permalink: /projects
 nav_order: 1
+description: >-
+  PostgreSQL work by Andrei Lepikhov: Spock logical replication, pg_track_optimizer, pg_index_stats, pg_middleout, Switch Join, and self-join removal in core.
 ---
 
 {% assign tools = site.data.projects | where: "group", "tool" %}

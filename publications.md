@@ -4,6 +4,8 @@ title: Publications
 subtitle: Journal articles, conference papers and the Ph.D. thesis.
 permalink: /publications
 nav_order: 2
+description: >-
+  Journal articles, conference papers and the Ph.D. thesis of Andrei Lepikhov, on parallel and distributed database systems and on hypersonic aerothermodynamics.
 ---
 
 {% assign db = site.data.publications | where: "area", "db" %}

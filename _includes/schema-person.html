@@ -1,0 +1,54 @@
+{%- comment -%}
+Person schema, in addition to the WebSite block jekyll-seo-tag emits.
+
+Two jobs. `sameAs` tells a search engine that the GitHub account, the LinkedIn
+profile, the Substack and this site are one person rather than four; without it
+they compete with each other. `alternateName` covers the forms the same person
+is cited under — papers say "Lepikhov A.V." and "Лепихов А.В.", talks say
+"Andrey", so a search for any of them should resolve here.
+
+Only assertions backed by something on the site belong in here.
+{%- endcomment -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Andrei Lepikhov",
+  "alternateName": [
+    "Andrey Lepikhov",
+    "Lepikhov A.V.",
+    "Лепихов Андрей Валерьевич",
+    "Лепихов А.В.",
+    "danolivo"
+  ],
+  "url": {{ site.url | append: site.baseurl | append: "/" | jsonify }},
+  "image": {{ "/assets/img/portrait.jpg" | absolute_url | jsonify }},
+  "email": {{ site.profile.email | prepend: "mailto:" | jsonify }},
+  "jobTitle": {{ site.profile.role | jsonify }},
+  "worksFor": { "@type": "Organization", "name": {{ site.profile.company | jsonify }} },
+  "homeLocation": { "@type": "Place", "name": {{ site.profile.location | jsonify }} },
+  "alumniOf": [
+    { "@type": "CollegeOrUniversity", "name": "Lomonosov Moscow State University" },
+    { "@type": "CollegeOrUniversity", "name": "Chelyabinsk State University" }
+  ],
+  "knowsAbout": [
+    "PostgreSQL",
+    "PostgreSQL internals",
+    "query optimisation",
+    "query planner",
+    "cardinality estimation",
+    "logical replication",
+    "distributed database systems",
+    "parallel database systems",
+    "computational fluid dynamics",
+    "hypersonic aerothermodynamics"
+  ],
+  "sameAs": [
+    {%- comment -%}Identity profiles only — not the CV file or the digest.{%- endcomment -%}
+    {%- assign profile_links = site.links | where_exp: "l", "l.name != 'Résumé (PDF)' and l.name != 'DBMS Digest'" -%}
+    {%- for l in profile_links -%}
+    {{ l.url | jsonify }}{% unless forloop.last %},{% endunless %}
+    {%- endfor -%}
+  ]
+}
+</script>

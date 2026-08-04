@@ -4,6 +4,8 @@ title: Curriculum vitae
 subtitle: Print this page for a paper copy.
 permalink: /cv
 nav_order: 4
+description: >-
+  Curriculum vitae of Andrei Lepikhov: Staff Software Engineer at pgEdge, previously Postgres Professional and the Academician V.P. Makeyev State Rocket Centre.
 ---
 
 <p class="meta">{{ site.profile.role }} at {{ site.profile.company }} &middot;

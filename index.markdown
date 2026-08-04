@@ -1,6 +1,8 @@
 ---
 layout: default
 title: Andrei Lepikhov
+description: >-
+  Andrei Lepikhov — Staff Software Engineer at pgEdge, working on PostgreSQL internals since 2017: query optimisation, logical replication and distributed systems.
 ---
 
 <div class="intro">

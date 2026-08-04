@@ -4,6 +4,8 @@ title: Talks
 subtitle: Conference and meetup appearances, with slides where they survived.
 permalink: /talks
 nav_order: 3
+description: >-
+  Conference talks by Andrei Lepikhov on the PostgreSQL query optimiser — PG BootCamp, PGDay Israel, FOSSASIA, PGConf.EU, HighLoad++ — with slides and video.
 ---
 
 {% assign groups = site.data.talks | group_by: "year" | sort: "name" | reverse %}
