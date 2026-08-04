@@ -98,11 +98,12 @@ code {
 .intro { display: flex; flex-wrap: wrap; gap: 1.5rem; align-items: flex-start; }
 .intro-text { flex: 1 1 20rem; }
 .intro-text .lede { font-size: 1.1rem; margin-bottom: 0.75rem; }
-/* Wider than a head-and-shoulders shot would need: the frame carries the
-   laptop and its Postgres sticker as well as the face. */
+/* The frame is the full desk scene, not a head-and-shoulders shot, so it needs
+   more width than a portrait would: at anything narrower the face and the
+   stickers both turn to mush. */
 .intro .portrait {
   flex: 0 0 auto;
-  width: 11rem;
+  width: 14rem;
   height: auto;
   border-radius: 4px;
 }
