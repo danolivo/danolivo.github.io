@@ -2,7 +2,7 @@
 layout: default
 title: Andrei Lepikhov
 description: >-
-  Andrei Lepikhov — Staff Software Engineer at pgEdge, working on PostgreSQL internals since 2017: query optimisation, logical replication and distributed systems.
+  Andrei Lepikhov: PostgreSQL contributor since 2017 on the query planner and executor, and Staff Software Engineer at pgEdge on logical replication.
 ---
 
 <div class="intro">
@@ -11,9 +11,9 @@ description: >-
        alt="Andrei Lepikhov at his laptop, a PostgreSQL elephant sticker on the lid">
   <div class="intro-text">
     <h1>Andrei Lepikhov</h1>
-    <p class="lede">Database systems engineer, working on PostgreSQL internals since 2017.
-    At {{ site.profile.company }} I work on active-active logical replication; as a
-    PostgreSQL contributor my own subject is the query planner and executor.</p>
+    <p class="lede">Database systems engineer and PostgreSQL contributor since 2017. At
+    {{ site.profile.company }} I work on active-active logical replication; as a contributor
+    my own subject is the query planner and executor.</p>
     <p>Two tracks, not one. Replication is the day job. The planner work — self-join removal,
     GROUP BY ordering, cardinality estimation, pre-sorted paths — is what I take to
     pgsql-hackers, and what most of the extensions and papers here are about.</p>
