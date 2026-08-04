@@ -75,7 +75,7 @@ the extensions in my own account, and the experiments at the bottom.</p>
 
 ## Planner experiments
 
-<p class="note">Optimiser ideas explored as branches and prototypes. Some are on their
+<p class="note">Optimizer ideas explored as branches and prototypes. Some are on their
 way into PostgreSQL, some are dead ends kept for the record.</p>
 
 {% for p in prototypes %}

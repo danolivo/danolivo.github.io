@@ -2,12 +2,12 @@
 #   core      — work contributed to PostgreSQL itself
 #   system    — database systems worked on as a whole
 #   extension — PostgreSQL extensions
-#   prototype — planner and optimiser experiments (the former "OptLab" page)
+#   prototype — planner and optimizer experiments (the former "OptLab" page)
 #
 # Descriptions are the author's own wording, lightly edited.
 #
 # `personal: true` marks an extension that lives under the author's own account
-# rather than an employer's organisation. The /cv page uses it to separate the
+# rather than an employer's organization. The /cv page uses it to separate the
 # upstream and personal work from the products of whoever was paying at the time.
 
 # The `core` list is taken from github.com/danolivo/resume. No release numbers
@@ -46,10 +46,10 @@
     - name: working branch
       url: https://github.com/postgrespro/postgres/tree/self-join-elimination
 
-- name: GROUP BY optimisation
+- name: GROUP BY optimization
   group: core
   body: >-
-    The optimiser is free to choose the order of grouping columns; putting the
+    The optimizer is free to choose the order of grouping columns; putting the
     column with the greatest number of distinct values first cuts comparison
     work.
   links:
@@ -76,7 +76,7 @@
     active-active replication across clusters and an architectural redesign that
     removed the extension's dependency on patches to core Postgres.
 
-- name: Adaptive Query Optimiser (AQO)
+- name: Adaptive Query Optimizer (AQO)
   group: extension
   years: 2017–2021
   status: open source
@@ -86,7 +86,7 @@
     is to save information about the actual number of rows produced by query plan
     nodes and reuse it during the next execution. Two significant hurdles were
     managed here: node signatures had to be invented to match cardinalities to
-    specific nodes during planning, and the knowledge base had to be generalised.
+    specific nodes during planning, and the knowledge base had to be generalized.
   links:
     - name: pgconf.dev 2024
       url: https://www.pgevents.ca/events/pgconfdev2024/sessions/session/147/
@@ -100,7 +100,7 @@
   summary: finds queries the planner got wrong, before they become an incident
   repo: https://github.com/danolivo/pg_track_optimizer
   body: >-
-    A lightweight PostgreSQL extension designed to identify poorly optimised
+    A lightweight PostgreSQL extension designed to identify poorly optimized
     queries — spotting planning problems before they show up as a performance
     incident.
 
@@ -109,14 +109,14 @@
   personal: true
   status: early stage
   featured: true
-  summary: a top-down planning pass that memoises correlated subplans
+  summary: a top-down planning pass that memoizes correlated subplans
   repo: https://github.com/danolivo/pg_middleout
   body: >-
     Middle-out planning: a top-down pass added after the planner's usual
-    bottom-up phase. Its first use is memoising correlated subqueries. A
+    bottom-up phase. Its first use is memoizing correlated subqueries. A
     correlated subquery that cannot be pulled up into a join becomes a SubPlan
     that re-executes for every outer row, and core PostgreSQL only attaches
-    Memoize to parameterised nested loops, never to a SubPlan — so repeated
+    Memoize to parameterized nested loops, never to a SubPlan — so repeated
     parameter values are recomputed, which ORM-generated SQL does constantly.
     The reason core cannot fix this in place is a chicken-and-egg problem: a
     SubPlan is built during the parent query's expression preprocessing, before
@@ -124,7 +124,7 @@
     distribution of parameter values — both needed to cost a Memoize — is known
     yet. Both are available once upper-query planning has finished, which is
     where this extension hooks in, walks the cheapest path tree, and swaps in a
-    memoised subplan when it pays for itself.
+    memoized subplan when it pays for itself.
 
 - name: pg_index_stats
   group: extension
@@ -156,7 +156,7 @@
     PostgreSQL. The fundamental conjecture is that the standard foreign data
     wrapper technique, as implemented in postgres_fdw, can be enough to partition
     data across multiple servers. The main efforts went into distributed
-    timestamp-based transactions (CSN), optimiser extensibility, and the
+    timestamp-based transactions (CSN), optimizer extensibility, and the
     must-have features for distributed execution — global tables, asymmetric
     join, shuffle join.
   links:
@@ -205,9 +205,9 @@
     An adaptive join that stops betting everything on the planner's cardinality
     estimate. Two plans are prepared up front — an optimistic one, typically a
     nested loop, and a pessimistic fallback, typically hash or merge join. During
-    execution outer tuples are materialised while actual row counts are watched;
+    execution outer tuples are materialized while actual row counts are watched;
     once the count crosses a threshold, execution switches to the pessimistic
-    plan mid-flight, reusing the already-materialised data without a restart or a
+    plan mid-flight, reusing the already-materialized data without a restart or a
     replan. Author and lead developer, with A. Rybakina, who presented the work
     at PGConf.Spb 2024 and pgconf.dev 2025. The source is not public.
   links:
@@ -218,7 +218,7 @@
     - name: pgconf.dev 2025
       url: https://2025.pgconf.dev/schedule.html
 
-- name: Query re-optimisation
+- name: Query re-optimization
   group: prototype
   body: >-
     Detect at run time that a plan has gone hopelessly wrong and replan the
@@ -240,7 +240,7 @@
   summary: sort the outer side of a join so nothing has to be sorted above it
   body: >-
     Queries of the shape "top-N items with their details" — an ORDER BY and a
-    LIMIT over a normalised schema reached through several optional LEFT JOINs —
+    LIMIT over a normalized schema reached through several optional LEFT JOINs —
     currently sort late and high in the tree. This work intensifies the sorted
     NestLoop trick: when the outer side of a nested loop appears in the
     query_pathkeys prefix, the planner tries to build a pre-sorted outer path

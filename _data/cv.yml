@@ -10,7 +10,7 @@
 #                                    reads as an application developer *using*
 #                                    Postgres, not one working on the engine)
 #   "Team Lead"                   -> "Tech Lead" (no direct reports)
-#   "Lead of the Optimization Lab"-> "Head of the Query Optimisation Lab",
+#   "Lead of the Optimization Lab"-> "Head of the Query Optimization Lab",
 #                                    seniority per LinkedIn (Principal)
 #   "Guest Lecturer"              -> "Visiting Lecturer"
 #   доцент                        -> "Associate Professor" (NOT "Assistant
@@ -35,27 +35,27 @@ experience:
     period: Dec 2017 — Sep 2025
     kind: remote
     roles:
-      - role: Principal Software Engineer, Head of the Query Optimisation Lab
+      - role: Principal Software Engineer, Head of the Query Optimization Lab
         period: Apr 2023 — Sep 2025
         body: >-
-          Led query optimiser development — SwitchJoin, built-in
-          re-optimisation, shuffle join, distributed query optimisation — and
-          implemented the re-optimisation feature for the enterprise fork.
-          Contributed optimisation features and patch reviews to PostgreSQL
+          Led query optimizer development — SwitchJoin, built-in
+          re-optimization, shuffle join, distributed query optimization — and
+          implemented the re-optimization feature for the enterprise fork.
+          Contributed optimization features and patch reviews to PostgreSQL
           core, reviewed the lab's code, spoke at conferences on query
-          optimisation, and kept a technical blog.
+          optimization, and kept a technical blog.
       - role: PostgreSQL Core Developer, Tech Lead
         period: Oct 2021 — Apr 2023
         body: >-
           Designed the query plan freezing extension (sr_plan) and architected
           the Shardman prototype, a distributed database system built on
           PostgreSQL. Contributed patches and reviews to core, including
-          self-join removal and GROUP BY optimisation.
+          self-join removal and GROUP BY optimization.
       - role: PostgreSQL Core Developer
         period: Dec 2017 — Oct 2021
         body: >-
           Developed the Multimaster extension and implemented parallel recovery;
-          maintained the Adaptive Query Optimiser and its CI. Contributed
+          maintained the Adaptive Query Optimizer and its CI. Contributed
           self-join removal, WAL compression and BTree bulk deletion to
           PostgreSQL core.
 
@@ -65,7 +65,7 @@ experience:
     period: Mar 2010 — Mar 2018
     where: Miass, Russia
     body: >-
-      Team lead for CAE modelling of supersonic and hypersonic flows around
+      Team lead for CAE modeling of supersonic and hypersonic flows around
       re-entry vehicles and upper spacecraft stages; computation of heat loads
       and thermal design of shielding systems; design and implementation of
       mathematical models of high-enthalpy flows. Tooling: ANSYS Fluent with
@@ -112,7 +112,7 @@ competencies:
     items: C/C++, SQL, Perl, Python, HTML/CSS, JavaScript, LaTeX
   - label: Expertise
     items: >-
-      relational databases, PostgreSQL internals, query optimisation, code
+      relational databases, PostgreSQL internals, query optimization, code
       review, performance tuning, scalability, team management
   - label: Tools and platforms
     items: >-

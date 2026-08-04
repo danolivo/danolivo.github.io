@@ -1,6 +1,6 @@
 ---
 layout: null
-title: "Optimisation Lab"
+title: "Optimization Lab"
 permalink: /OptLab
 sitemap: false
 ---
@@ -13,7 +13,7 @@ sitemap: false
   <meta http-equiv="refresh" content="0; url={{ '/projects' | relative_url }}">
 </head>
 <body>
-  <p>The Optimisation Lab list now lives on the
+  <p>The Optimization Lab list now lives on the
   <a href="{{ '/projects' | relative_url }}">projects</a> page.</p>
 </body>
 </html>

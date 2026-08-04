@@ -17,9 +17,9 @@ description: >-
     <p>Two tracks, not one. Replication is the day job. The planner work — self-join removal,
     GROUP BY ordering, cardinality estimation, pre-sorted paths — is what I take to
     pgsql-hackers, and what most of the extensions and papers here are about.</p>
-    <p>Ph.D. on query processing in parallel database systems for hierarchically organised
+    <p>Ph.D. on query processing in parallel database systems for hierarchically organized
     multiprocessors, then eight years at Postgres Professional, latterly heading its query
-    optimisation lab. For eight years before that, and overlapping it, I was a senior
+    optimization lab. For eight years before that, and overlapping it, I was a senior
     scientist computing supersonic and hypersonic flows around re-entry vehicles — heat
     loads, ablating thermal protection, rocket engine combustion.</p>
     <p>I write about Postgres internals at

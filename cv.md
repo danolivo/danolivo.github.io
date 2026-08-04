@@ -37,7 +37,7 @@ description: >-
 
 <p class="note">The planner and executor work below is my own, and runs across
 employers rather than belonging to any one of them: the salaried subject is
-replication, the contributor subject has been query optimisation since 2017.</p>
+replication, the contributor subject has been query optimization since 2017.</p>
 
 {% assign core = site.data.projects | where: "group", "core" %}
 {% assign own = site.data.projects | where: "personal", true %}
