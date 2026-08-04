@@ -5,7 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   {%- seo -%}
   {%- include schema-person.html -%}
+  {%- comment -%}
+    /favicon.ico must exist at the site root whatever the link tags say: browsers
+    probe that path for the origin, and a 404 there shows up first on the root
+    document, which is where the tab icon was missing.
+  {%- endcomment -%}
   <link rel="icon" href="{{ '/assets/favicon.svg' | relative_url }}" type="image/svg+xml">
+  <link rel="icon" href="{{ '/favicon.ico' | relative_url }}" sizes="16x16 32x32 48x48">
   <link rel="icon" href="{{ '/assets/favicon-32.png' | relative_url }}" sizes="32x32">
   <link rel="apple-touch-icon" href="{{ '/assets/apple-touch-icon.png' | relative_url }}">
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
