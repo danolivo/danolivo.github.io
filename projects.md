@@ -8,6 +8,11 @@ description: >-
   PostgreSQL work by Andrei Lepikhov: Spock logical replication, pg_track_optimizer, pg_index_stats, pg_middleout, Switch Join, and self-join removal in core.
 ---
 
+<p class="note">Two threads run through this page. Logical replication is what I am
+paid to work on — currently Spock at pgEdge. The planner and executor are what I
+work on as a PostgreSQL contributor, and they account for everything under core,
+the extensions in my own account, and the experiments at the bottom.</p>
+
 {% assign tools = site.data.projects | where: "group", "tool" %}
 {% assign core = site.data.projects | where: "group", "core" %}
 {% assign systems = site.data.projects | where: "group", "system" %}

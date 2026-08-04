@@ -5,6 +5,10 @@
 #   prototype — planner and optimiser experiments (the former "OptLab" page)
 #
 # Descriptions are the author's own wording, lightly edited.
+#
+# `personal: true` marks an extension that lives under the author's own account
+# rather than an employer's organisation. The /cv page uses it to separate the
+# upstream and personal work from the products of whoever was paying at the time.
 
 # The `core` list is taken from github.com/danolivo/resume. No release numbers
 # are claimed here, since the CV does not state them.
@@ -89,6 +93,7 @@
 
 - name: pg_track_optimizer
   group: extension
+  personal: true
   years: since 2023
   status: open source
   featured: true
@@ -101,6 +106,7 @@
 
 - name: pg_middleout
   group: extension
+  personal: true
   status: early stage
   featured: true
   summary: a top-down planning pass that memoises correlated subplans
@@ -122,6 +128,7 @@
 
 - name: pg_index_stats
   group: extension
+  personal: true
   status: open source
   featured: true
   summary: derives extended statistics automatically from the indexes you already have

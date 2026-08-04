@@ -33,6 +33,30 @@ description: >-
 </div>
 {% endfor %}
 
+## Open source
+
+<p class="note">The planner and executor work below is my own, and runs across
+employers rather than belonging to any one of them: the salaried subject is
+replication, the contributor subject has been query optimisation since 2017.</p>
+
+{% assign core = site.data.projects | where: "group", "core" %}
+{% assign own = site.data.projects | where: "personal", true %}
+
+<h3>Contributed to PostgreSQL</h3>
+<ul>
+{%- for p in core %}
+  <li><strong>{{ p.name }}</strong> — {{ p.body | strip }}</li>
+{%- endfor %}
+</ul>
+
+<h3>Extensions of my own</h3>
+<ul>
+{%- for p in own %}
+  <li><strong>{{ p.name }}</strong>{% if p.status %} ({{ p.status }}){% endif %} —
+  {{ p.summary | default: p.body }}{% if p.repo %} <a href="{{ p.repo }}">{{ p.repo | remove: "https://github.com/" }}</a>{% endif %}</li>
+{%- endfor %}
+</ul>
+
 ## Education
 
 {% for e in site.data.cv.education %}
