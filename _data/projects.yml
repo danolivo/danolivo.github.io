@@ -238,17 +238,7 @@
     - name: branch
       url: https://github.com/postgrespro/postgres/tree/asymmetric-join
 
-- name: WAL compression
-  group: prototype
-  body: >-
-    Compression of write-ahead log records. Carried in enterprise forks and
-    proposed to the community; not in core.
 
-- name: BTree bulk deletion
-  group: prototype
-  body: >-
-    Bulk deletion of index entries during B-tree vacuuming. Carried in enterprise
-    forks and proposed to the community; not in core.
 
 - name: Switch Join
   group: prototype
@@ -275,20 +265,3 @@
     Detect at run time that a plan has gone hopelessly wrong and replan the
     query instead of waiting for it to finish. Designed and implemented for the
     Postgres Pro enterprise fork; presented at PGConf.Russia 2023.
-
-- name: Pre-sorted outer path on an ORDER BY prefix
-  group: prototype
-  featured: true
-  summary: sort the outer side of a join so nothing has to be sorted above it
-  body: >-
-    Queries of the shape "top-N items with their details" — an ORDER BY and a
-    LIMIT over a normalized schema reached through several optional LEFT JOINs —
-    currently sort late and high in the tree. This work intensifies the sorted
-    NestLoop trick: when the outer side of a nested loop appears in the
-    query_pathkeys prefix, the planner tries to build a pre-sorted outer path
-    even with no index on the sort expression, and offers a join with sorted
-    output. The executor's tuple-bound propagation is extended so the LIMIT
-    reaches through the outer side. Work in progress on pgsql-hackers.
-  links:
-    - name: pgsql-hackers thread
-      url: https://www.postgresql.org/message-id/19a9265c-c441-4a43-bc0d-dac533438da0%40gmail.com

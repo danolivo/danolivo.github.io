@@ -3,7 +3,7 @@ layout: default
 title: Curriculum vitae
 subtitle: Print this page for a paper copy.
 permalink: /cv
-nav_order: 4
+nav_order: 5
 description: >-
   Curriculum vitae of Andrei Lepikhov: Staff Software Engineer at pgEdge, previously Postgres Professional and the Academician V.P. Makeyev State Rocket Centre.
 ---
@@ -51,6 +51,11 @@ PostgreSQL 12 to 19.</p>
   {{ p.body | strip }}</li>
 {%- endfor %}
 </ul>
+
+<h3>Open upstream</h3>
+<p>{{ site.data.proposals.commitfest | size }} patches in the PostgreSQL commitfest and
+one more on the mailing list, neither landed nor rejected — listed with their status
+<a href="{{ '/proposed' | relative_url }}">here</a>.</p>
 
 <h3>Extensions of my own</h3>
 <ul>

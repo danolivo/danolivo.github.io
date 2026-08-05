@@ -73,11 +73,11 @@ the extensions in my own account, and the experiments at the bottom.</p>
 </div>
 {% endfor %}
 
-## Proposed upstream, and in enterprise forks
+## Enterprise forks and experiments
 
-<p class="note">Work that is not in PostgreSQL itself. Some of it is on the way —
-proposed on pgsql-hackers and under discussion; some ships in enterprise forks that
-carry patches core has not taken; some are dead ends kept for the record.</p>
+<p class="note">Not in PostgreSQL itself: techniques built for an enterprise fork, and
+optimizer ideas explored as prototypes. Patches currently open upstream are tracked
+separately, on the <a href="{{ '/proposed' | relative_url }}">in flight</a> page.</p>
 
 {% for p in prototypes %}
 <div class="project">

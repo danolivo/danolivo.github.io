@@ -1,0 +1,96 @@
+# Work proposed to PostgreSQL that has neither landed nor been rejected.
+#
+# `status`, `cf` and `target` come from commitfest.postgresql.org and were read on
+# 2026-08-05 from the open commitfests (PG20-1, PG20-2, PG20-Drafts) plus the two
+# most recently closed. A commitfest status changes without notice, so the page
+# says when it was checked and links the entry — the commitfest is the authority,
+# not this file.
+#
+# Only entries where the author is credited as an author are listed. Patches he
+# reviews belong to other people and are counted on /cv instead.
+
+checked: 2026-08-05
+
+commitfest:
+  - id: 6868
+    title: Show hashed SAOP decision in EXPLAIN
+    status: Ready for Committer
+    cf: PG20-2
+    target: 20
+    since: June 2026
+    body: >-
+      When a ScalarArrayOpExpr is evaluated through a hash table rather than a
+      linear scan of the array, EXPLAIN currently does not say so, which leaves
+      no way to tell the two apart from the plan alone.
+    thread: https://www.postgresql.org/message-id/flat/e7914157-0311-4a81-ac62-88ee9cbb8c2d%40gmail.com
+
+  - id: 6981
+    title: "Lazy LEFT NestLoop JOIN: gate rescanning of the inner side"
+    status: Needs review
+    cf: PG20-2
+    target: 20
+    since: July 2026
+    coauthors: M. Zhilin, P. Petrov
+    body: >-
+      Skip rescanning the inner side of a nested loop when join clauses that
+      reference only the outer side already decide that no inner row can match.
+    thread: https://www.postgresql.org/message-id/flat/CAKE%3DrqQ-LHuh2eVsKC7ihkRJoCBZafSR72o3Xk4Xb%3DLcQMQfsA%40mail.gmail.com
+
+  - id: 5012
+    title: Vacuum statistics
+    status: Needs review
+    cf: PG20-2
+    target: 19
+    since: May 2024
+    coauthors: A. Zubkov, A. Rybakina
+    body: >-
+      Per-relation and per-index statistics on what vacuum actually did, so that
+      autovacuum behaviour can be diagnosed from the server rather than guessed
+      at from log lines.
+    thread: https://www.postgresql.org/message-id/flat/bee34abe-fe87-49b3-8523-8ae19e641ccf%40yandex.ru
+
+  - id: 6224
+    title: Give plugins control at the end of CHECKPOINT to store their state
+    status: Needs review
+    cf: PG20-1
+    target: 19
+    since: November 2025
+    coauthors: A. Rehman
+    body: >-
+      A hook at the end of a checkpoint, so an extension can persist its own
+      state at a point where the server guarantees a consistent on-disk image.
+    thread: https://www.postgresql.org/message-id/flat/CANbhV-E4pTWeF-DsdaGsOrjJNFWPaR%2BDstjrnkqvf9JFFgOKKQ%40mail.gmail.com
+
+  - id: 5093
+    title: Incremental sort cost estimation instability
+    status: Waiting on Author
+    cf: PG19-Final
+    target: 18
+    since: July 2024
+    body: >-
+      The cost model for incremental sort swings on small changes in the input
+      estimate, which makes the planner's choice between sort strategies less
+      stable than the underlying data warrants.
+    thread: https://www.postgresql.org/message-id/flat/ba0edc53-4b1f-4c67-92d1-29aeddb36a18%40gmail.com
+
+# Proposed on the mailing list, no commitfest entry found under a matching title.
+hackers:
+  - title: Try a presorted outer path when referenced by an ORDER BY prefix
+    since: April 2026
+    featured: true
+    summary: sort the outer side of a join so nothing has to be sorted above it
+    body: >-
+      For "top-N with details" shapes — an ORDER BY and a LIMIT over a normalized
+      schema reached through several optional LEFT JOINs — build a pre-sorted
+      outer path for the nested loop even with no index on the sort expression,
+      and propagate the tuple bound through the outer side.
+    thread: https://www.postgresql.org/message-id/19a9265c-c441-4a43-bc0d-dac533438da0%40gmail.com
+
+# Carried in enterprise forks. These predate the commitfests above and are not
+# currently registered, so no status can be quoted for them.
+# TODO: add the pgsql-hackers thread for each, or drop the "proposed" wording.
+forks:
+  - title: WAL compression
+    body: Compression of write-ahead log records.
+  - title: BTree bulk deletion
+    body: Bulk deletion of index entries during B-tree vacuuming.

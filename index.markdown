@@ -31,16 +31,25 @@ description: >-
 
 ## What I am working on
 
+{%- comment -%}
+  Current work spans two data files: shipped things in projects.yml, and patches
+  still open upstream in proposals.yml. Both carry `featured: true`.
+{%- endcomment -%}
 {% assign featured = site.data.projects | where: "featured", true %}
+{% assign open_upstream = site.data.proposals.hackers | where: "featured", true %}
 <ul>
 {%- for p in featured %}
   <li><strong>{{ p.name }}</strong> — {{ p.summary }}</li>
 {%- endfor %}
+{%- for p in open_upstream %}
+  <li><strong>{{ p.title }}</strong> — {{ p.summary }}
+  (<a href="{{ '/proposed' | relative_url }}">in flight</a>)</li>
+{%- endfor %}
 </ul>
 
-<p>More on the <a href="{{ '/projects' | relative_url }}">projects</a> page, including the
-distributed and high-availability systems I worked on earlier and the planner experiments
-that have not landed anywhere yet.</p>
+<p>What has shipped is on the <a href="{{ '/projects' | relative_url }}">projects</a> page,
+with the release each feature landed in; what is still open upstream is
+<a href="{{ '/proposed' | relative_url }}">in flight</a>.</p>
 
 ## Recent talks
 
