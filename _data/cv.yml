@@ -47,10 +47,12 @@ experience:
       - role: PostgreSQL Core Developer, Tech Lead
         period: Oct 2021 — Apr 2023
         body: >-
-          Designed the query plan freezing extension (sr_plan) and architected
-          the Shardman prototype, a distributed database system built on
-          PostgreSQL. Began the self-join elimination and GROUP BY reordering
-          work that later landed in PostgreSQL 18 and 17.
+          Architect of Shardman, a distributed database system built on
+          PostgreSQL: proposed and prototyped substantially all of the query
+          optimization and distributed execution features it runs on today.
+          Designed the query plan freezing extension (sr_plan). Began the
+          self-join elimination and GROUP BY reordering work that later landed
+          in PostgreSQL 18 and 17.
       - role: PostgreSQL Core Developer
         period: Dec 2017 — Oct 2021
         body: >-

@@ -180,18 +180,27 @@
 
 - name: Shardman
   group: system
+  years: 2019–2023
   status: proprietary
   body: >-
-    An attempt to build a distributed database system natively based on
-    PostgreSQL. The fundamental conjecture is that the standard foreign data
-    wrapper technique, as implemented in postgres_fdw, can be enough to partition
-    data across multiple servers. The main efforts went into distributed
-    timestamp-based transactions (CSN), optimizer extensibility, and the
-    must-have features for distributed execution — global tables, asymmetric
-    join, shuffle join.
+    A distributed database system built natively on PostgreSQL. The fundamental
+    conjecture is that the standard foreign data wrapper technique, as
+    implemented in postgres_fdw, can be enough to partition data across multiple
+    servers. The main efforts went into distributed timestamp-based transactions
+    (CSN), optimizer extensibility, and the must-have features for distributed
+    execution — global tables, asymmetric join, shuffle join.
+
+    I was the architect of the project, and proposed and prototyped
+    substantially all of the query optimization and distributed execution
+    features it runs on today. The code is proprietary; the design is public in
+    the talks and the mailing-list thread below.
   links:
-    - name: CSN discussion on pgsql-hackers
+    - name: CSN thread on pgsql-hackers
       url: https://www.postgresql.org/message-id/flat/07b2c899-4ed0-4c87-1327-23c750311248%40postgrespro.ru
+    - name: distributed planning and execution, PGConf.EU 2019
+      url: https://www.postgresql.eu/events/pgconfeu2019/schedule/session/2594-beyond-the-pushdowns-distributed-query-planning-and-execution/
+    - name: Shardman at HighLoad++ Siberia 2019 (video)
+      url: https://youtu.be/IoNGmwgo9ZY
 
 - name: Multimaster
   group: system
