@@ -49,15 +49,15 @@ experience:
         body: >-
           Designed the query plan freezing extension (sr_plan) and architected
           the Shardman prototype, a distributed database system built on
-          PostgreSQL. Contributed patches and reviews to core, including
-          self-join removal and GROUP BY optimization.
+          PostgreSQL. Began the self-join elimination and GROUP BY reordering
+          work that later landed in PostgreSQL 18 and 17.
       - role: PostgreSQL Core Developer
         period: Dec 2017 — Oct 2021
         body: >-
           Developed the Multimaster extension and implemented parallel recovery;
-          maintained the Adaptive Query Optimizer and its CI. Contributed
-          self-join removal, WAL compression and BTree bulk deletion to
-          PostgreSQL core.
+          maintained the Adaptive Query Optimizer. First core contributions
+          landed in PostgreSQL 12: less write-ahead log during GiST, GIN and
+          SP-GiST index builds.
 
   - company: Academician V.P. Makeyev State Rocket Centre
     role: Senior Scientist
@@ -109,15 +109,15 @@ education:
 
 competencies:
   - label: Languages
-    items: C/C++, SQL, Perl, Python, HTML/CSS, JavaScript, LaTeX
+    items: C/C++, SQL, Perl, Python, LaTeX
   - label: Expertise
     items: >-
-      relational databases, PostgreSQL internals, query optimization, code
-      review, performance tuning, scalability, team management
+      relational databases, PostgreSQL internals, query optimization,
+      performance tuning, scalability, mentoring and code review
   - label: Tools and platforms
     items: >-
-      PostgreSQL, MySQL, MS SQL Server, Citus, GitHub Actions, Jira, Confluence,
-      Linux, bash, gdb, perf, git
+      PostgreSQL, MySQL, MS SQL Server, Citus, GitHub Actions, Linux, bash, gdb,
+      perf, git
 
 certifications:
   - year: 2023

@@ -2,16 +2,19 @@
 #   core      — work contributed to PostgreSQL itself
 #   system    — database systems worked on as a whole
 #   extension — PostgreSQL extensions
-#   prototype — planner and optimizer experiments (the former "OptLab" page)
+#   prototype — proposed upstream and/or carried in enterprise forks, plus dead
+#               ends kept for the record (the former "OptLab" page)
 #
 # Descriptions are the author's own wording, lightly edited.
 #
 # `personal: true` marks an extension that lives under the author's own account
 # rather than an employer's organization. The /cv page uses it to separate the
 # upstream and personal work from the products of whoever was paying at the time.
-
-# The `core` list is taken from github.com/danolivo/resume. No release numbers
-# are claimed here, since the CV does not state them.
+#
+# The `core` list and its `release:` fields were established from the upstream
+# git history, checked against the release branches rather than against commit
+# ancestry — three of these features were committed, reverted, and committed
+# again in a later cycle, so ancestry alone names the wrong release.
 
 - name: DBMS Digest
   group: tool
@@ -37,32 +40,59 @@
     - name: why it exists
       url: https://danolivo.substack.com/p/a-generative-postgres-digest-from
 
-- name: Self-join removal
+- name: Self-Join Elimination
   group: core
+  release: PostgreSQL 18
   body: >-
-    Remove an unnecessary self-join from the query tree when it can be proved
-    that a single scan returns the same data.
-  links:
-    - name: working branch
-      url: https://github.com/postgrespro/postgres/tree/self-join-elimination
+    Drop a self-join from the query tree when a single scan provably returns the
+    same rows. Committed for 17, reverted, redesigned and committed again for 18;
+    the RowMark and placeholder edge cases that caused the revert are fixed in the
+    version that shipped.
 
-- name: GROUP BY optimization
+- name: OR-clause to array transformation
   group: core
+  release: PostgreSQL 18
   body: >-
-    The optimizer is free to choose the order of grouping columns; putting the
-    column with the greatest number of distinct values first cuts comparison
-    work.
-  links:
-    - name: working branch
-      url: https://github.com/postgrespro/postgres/tree/sort-columnsnum
+    Turn a long chain of OR'd equality tests into a single ScalarArrayOpExpr, so
+    the planner can match it to an index or a bitmap path instead of walking the
+    chain. Also reverted once before landing.
 
-- name: WAL compression
+- name: GROUP BY key reordering
   group: core
-  body: Compression of write-ahead log records.
+  release: PostgreSQL 17
+  body: >-
+    The optimizer is free to choose the order of grouping columns; ordering them
+    to cut comparison work is now a costed choice, controlled by
+    enable_group_by_reordering.
 
-- name: BTree bulk deletion
+- name: Extended statistics for hash join bucket size
   group: core
-  body: Bulk deletion of entries during B-tree vacuuming.
+  release: PostgreSQL 18
+  body: >-
+    Use multivariate statistics to estimate hash join bucket size, instead of
+    assuming independence between the hash keys.
+
+- name: Tuple-bound propagation through Append
+  group: core
+  release: PostgreSQL 18
+  body: >-
+    Teach Append to take the query's tuple fraction into account when
+    accumulating subpaths, so a LIMIT above a partitioned scan is not planned as
+    though every partition would be read in full.
+
+- name: PG_MODULE_MAGIC_EXT
+  group: core
+  release: PostgreSQL 18
+  body: >-
+    An extension can now declare its name and version in the module magic block,
+    so the server knows what it loaded rather than inferring it.
+
+- name: WAL volume reduction in index builds
+  group: core
+  release: PostgreSQL 12
+  body: >-
+    Generate less write-ahead log while building GiST, GIN and SP-GiST indexes,
+    and drop an unnecessary copy when reading a WAL record that fits on one page.
 
 - name: Spock
   group: extension
@@ -199,6 +229,18 @@
     - name: branch
       url: https://github.com/postgrespro/postgres/tree/asymmetric-join
 
+- name: WAL compression
+  group: prototype
+  body: >-
+    Compression of write-ahead log records. Carried in enterprise forks and
+    proposed to the community; not in core.
+
+- name: BTree bulk deletion
+  group: prototype
+  body: >-
+    Bulk deletion of index entries during B-tree vacuuming. Carried in enterprise
+    forks and proposed to the community; not in core.
+
 - name: Switch Join
   group: prototype
   body: >-
@@ -224,15 +266,6 @@
     Detect at run time that a plan has gone hopelessly wrong and replan the
     query instead of waiting for it to finish. Designed and implemented for the
     Postgres Pro enterprise fork; presented at PGConf.Russia 2023.
-
-- name: Extended statistics for hash join bucket estimation
-  group: prototype
-  body: >-
-    Use extended statistics to estimate the number of hash join buckets more
-    precisely.
-  links:
-    - name: branch
-      url: https://github.com/postgrespro/postgres/tree/multivariate-buckets-estimation
 
 - name: Pre-sorted outer path on an ORDER BY prefix
   group: prototype

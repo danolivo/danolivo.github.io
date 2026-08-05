@@ -37,15 +37,18 @@ description: >-
 
 <p class="note">The planner and executor work below is my own, and runs across
 employers rather than belonging to any one of them: the salaried subject is
-replication, the contributor subject has been query optimization since 2017.</p>
+replication, the contributor subject has been query optimization since 2017.
+Upstream history credits me as author on 43 commits and as reviewer on 67, across
+PostgreSQL 12 to 19.</p>
 
 {% assign core = site.data.projects | where: "group", "core" %}
 {% assign own = site.data.projects | where: "personal", true %}
 
-<h3>Contributed to PostgreSQL</h3>
+<h3>In PostgreSQL core</h3>
 <ul>
 {%- for p in core %}
-  <li><strong>{{ p.name }}</strong> — {{ p.body | strip }}</li>
+  <li><strong>{{ p.name }}</strong>{% if p.release %} ({{ p.release }}){% endif %} —
+  {{ p.body | strip }}</li>
 {%- endfor %}
 </ul>
 

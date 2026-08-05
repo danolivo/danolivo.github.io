@@ -35,7 +35,7 @@ the extensions in my own account, and the experiments at the bottom.</p>
 
 {% for p in core %}
 <div class="project">
-  <h3>{{ p.name }}</h3>
+  <h3>{{ p.name }}{% if p.release %}<span class="status">{{ p.release }}</span>{% endif %}</h3>
   <p>{{ p.body }}</p>
   {%- if p.links %}
   <p class="meta">
@@ -73,10 +73,11 @@ the extensions in my own account, and the experiments at the bottom.</p>
 </div>
 {% endfor %}
 
-## Planner experiments
+## Proposed upstream, and in enterprise forks
 
-<p class="note">Optimizer ideas explored as branches and prototypes. Some are on their
-way into PostgreSQL, some are dead ends kept for the record.</p>
+<p class="note">Work that is not in PostgreSQL itself. Some of it is on the way —
+proposed on pgsql-hackers and under discussion; some ships in enterprise forks that
+carry patches core has not taken; some are dead ends kept for the record.</p>
 
 {% for p in prototypes %}
 <div class="project">
